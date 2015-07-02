@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-04-27 14:23:25+0000\n"
+"PO-Revision-Date: 2015-06-12 01:38:15+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -571,6 +571,10 @@ msgstr "Ocultar opções do post"
 msgid "In the editing area the Tab key enters a tab character. To move below this area by pressing Tab, press the Esc key followed by the Tab key. In some cases the Esc key will need to be pressed twice before the Tab key will allow you to continue."
 msgstr "Na área de edição a tecla Tab insere uma tabulação. Para mover para baixo desta área teclando Tab, tecle primeiro Esc e em seguida tecle Tab. Em alguns casos, será preciso teclar Esc duas vezes antes que a tecla Tab permita que você continue."
 
+#: wp-admin/includes/update.php:289
+msgid "There is a new version of %1$s available. <a href=\"%2$s\" class=\"thickbox\" title=\"%3$s\">View version %4$s details</a> or <a href=\"%5$s\" class=\"update-link\">update now</a>."
+msgstr "Uma nova versão de %1$s está disponível. <a href=\"%2$s\" class=\"thickbox\" title=\"%3$s\">Ver informações da versão %4$s</a> ou <a href=\"%5$s\" class=\"update-link\">atualizar agora</a>."
+
 #: wp-admin/includes/template.php:2247
 msgid "You are currently editing the page that shows your latest posts."
 msgstr "Atualmente você está editando a página que exibe seus posts mais recentes."
@@ -582,10 +586,6 @@ msgstr "Página de posts"
 #: wp-admin/includes/theme.php:524
 msgid "Close details dialog"
 msgstr "Fechar janela de informações"
-
-#: wp-admin/includes/update.php:289
-msgid "There is a new version of %1$s available. <a href=\"%2$s\" class=\"thickbox\" title=\"%3$s\">View version %4$s details</a> or <a href=\"%5$s\" class=\"update-link\">update now</a>."
-msgstr "Uma nova versão de %$1s está disponível. <a href=\"%2$s\" class=\"thickbox\" title=\"%3$s\">Ver informações da versão %4$s</a> ou <a href=\"%5$s\" class=\"update-link\">atualizar agora</a>."
 
 #: wp-admin/ms-delete-site.php:45
 msgid ""
