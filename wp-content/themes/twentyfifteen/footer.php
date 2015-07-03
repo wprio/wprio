@@ -29,6 +29,6 @@
 </div><!-- .site -->
 
 <?php wp_footer(); ?>
-
+<?php echo "<small style='color:#1c476e;text-indent:-9999px;'>".rand()."</small>"; ?>
 </body>
 </html>
