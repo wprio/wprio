@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<meta charset="utf-8">
-	<title>WP Rio</title>
-</head>
-<body>
-	<p>Tema inicial do WP Rio</p>
-</body>
-</html>
+<?php
+/**
+ * The default template for the front page of WordPress
+ *
+ * @package Odin
+ * @since 2.2.0
+ */
+?>

@@ -1,11 +1,14 @@
 <?php
 /**
- * The main template file.
+ * The template for displaying Meetups CPT Archive pages.
  *
- * This is the most generic template file in a WordPress theme and one of the
- * two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * For example, it puts together the home page when no home.php file exists.
+ * Used to display archive-type pages if nothing more specific matches a query.
+ * For example, puts together date-based pages if no date.php file exists.
+ *
+ * If you'd like to further customize these archive views, you may create a
+ * new template file for each specific one. For example, Twenty Thirteen
+ * already has tag.php for Tag archives, category.php for Category archives,
+ * and author.php for Author archives.
  *
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
@@ -17,8 +20,16 @@ get_header(); ?>
 
 	<main id="content" class="<?php echo odin_classes_page_sidebar(); ?>" tabindex="-1" role="main">
 
-			<?php
-				if ( have_posts() ) :
+			<?php if ( have_posts() ) : ?>
+
+				<header class="page-header">
+					<?php
+						the_archive_title( '<h1 class="page-title">', '</h1>' );
+						the_archive_description( '<div class="taxonomy-description">', '</div>' );
+					?>
+				</header><!-- .page-header -->
+
+				<?php
 					// Start the Loop.
 					while ( have_posts() ) : the_post();
 
@@ -31,7 +42,7 @@ get_header(); ?>
 
 					endwhile;
 
-					// Post navigation.
+					// Page navigation.
 					odin_paging_nav();
 
 				else :
@@ -41,7 +52,7 @@ get_header(); ?>
 				endif;
 			?>
 
-	</main><!-- #content -->
+	</main><!-- #main -->
 
 <?php
 get_sidebar();
