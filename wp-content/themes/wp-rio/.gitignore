@@ -1,20 +1,3 @@
-# WordPress
-.htaccess
-sitemap.xml
-sitemap.xml.gz
-wp-config.php
-wp-content/backup-db/
-wp-content/backups/
-wp-content/blogs.dir/
-wp-content/cache/
-wp-content/upgrade/
-wp-content/uploads/
-wc-logs/
-wp-snapshots/
-
-# Theme
-wp-content/themes/wp-rio/node_modules/
-
 # Global
 ._*
 .AppleDouble
@@ -34,14 +17,22 @@ tags
 .netrwhist
 *.un~
 Session.vim
-*.log
 *.sublime-project
 *.sublime-workspace
 *.sublime-projectcompletions
 *.tmproj
 *.tmproject
 tmtags
-nbproject/
+nbproject/*
 .ftppass
 .sftp-config.json
-.idea
+sftp-config.json
+
+# Project
+src/.sass-cache/*
+src/node_modules/*
+src/.ftppass
+src/tmp/*
+assets/js/main.min.js
+odin.zip
+
