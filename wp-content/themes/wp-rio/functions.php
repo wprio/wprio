@@ -213,6 +213,9 @@ add_action( 'after_switch_theme', 'odin_flush_rewrite' );
 function odin_enqueue_scripts() {
 	$template_url = get_template_directory_uri();
 
+	// Roboto Font Family
+	wp_enqueue_style( 'roboto-family', '//fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500,500italic,700,700italic', array(), null, 'all' );
+
 	// Loads Odin main stylesheet.
 	wp_enqueue_style( 'odin-style', get_stylesheet_uri(), array(), null, 'all' );
 
