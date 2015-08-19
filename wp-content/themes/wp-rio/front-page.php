@@ -24,8 +24,12 @@
 		</nav><!-- .main-nav -->
 
 		<div class="header-caption">
-			Lorem ipsum dolor sit amet, consectetur adipisicing.
-			<a class="header-button" href="#">Leia o nosso manifesto</a>
+			<div class="caption-wrapper">
+				<h1>Bem-vindo à Comunidade Carioca de WordPress</h1>
+				<h2>Aqui, todos amamos WordPress e adoramos fazer poesia com ele!</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+				<a class="header-button" href="#">Leia o nosso manifesto</a>
+			</div>
 		</div><!-- .header-caption -->
 	</header><!-- .main-header -->
 

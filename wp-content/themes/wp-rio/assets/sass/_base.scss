@@ -3,8 +3,74 @@ body {
 	height: 100%;
 }
 
+body {
+	font: 400 14px/1.28em $base-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+h1 {
+	font-size: 20px;
+}
+
 .main-header {
-	min-height: 100%;
+	height: 100%;
+	max-height: 765px;
+	border-bottom: 4px solid $primary-color;
+	background: url('../images/header.jpg') no-repeat center center;
+
+	.header-caption {
+		@extend .container;
+		display: table;
+		height: 100%;
+		margin-top: -68px;
+		color: $white;
+
+		.caption-wrapper {
+			max-width: 575px;
+			display: table-cell;
+			vertical-align: middle;
+
+			h2 {
+				text-transform: none;
+			}
+
+			.header-button {
+				display: inline-block;
+				width: 410px;
+				height: 70px;
+				line-height: 70px;
+				text-align: center;
+				text-transform: uppercase;
+				font-size: 22px;
+				font-weight: 700;
+				color: $white;
+				border-radius: 5px;
+				background-color: $primary-color;
+				@include transition(background-color .3s);
+
+				&:after {
+					@extend .glyphicon;
+					margin-left: 25px;
+					top: 2px;
+					content: "\e258";
+				}
+
+				&:hover {
+					background-color: darken($primary-color, 15%);
+					text-decoration: none;
+				}
+			}
+		}
+	}
 	
 	.main-nav {
 		position: relative;
