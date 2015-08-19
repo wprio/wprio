@@ -8,14 +8,18 @@
 <body>
 	<header class="main-header">
 		<nav class="main-nav">
-			<a id="logo" href="<?php echo home_url( '/' ); ?>" title="Ir para Home"><img src="" alt="Logo WP Rio"></a>
+			<a id="logo" href="<?php echo home_url( '/' ); ?>" title="Ir para Home">
+				<img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="Logo WP Rio">
+			</a>
 			<ul class="menu">
-				<li>WordPress</li>
-				<li>Meetups</li>
-				<li>WordCamps</li>
-				<li>Comunidade</li>
-				<li>Blog</li>
-				<li>Contato</li>
+				<li class="menu-item"><a href="#">WordPress</a></li>
+				<li class="menu-item"><a href="#">Meetups</a></li>
+				<li class="menu-item"><a href="#">WordCamps</a></li>
+
+				<!-- float invertido, ordem inversa -->
+				<li class="menu-item"><a href="#">Contato</a></li>
+				<li class="menu-item"><a href="#">Blog</a></li>
+				<li class="menu-item"><a href="#">Comunidade</a></li>
 			</ul><!-- .menu -->
 		</nav><!-- .main-nav -->
 

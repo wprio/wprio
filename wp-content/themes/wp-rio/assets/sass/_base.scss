@@ -1,0 +1,56 @@
+html,
+body {
+	height: 100%;
+}
+
+.main-header {
+	min-height: 100%;
+	
+	.main-nav {
+		position: relative;
+		height: 68px;
+		background-color: $light-gray;
+
+		#logo {
+			position: absolute;
+			display: block;
+			left: 50%;
+			margin-left: -100px;
+		}
+		
+		.menu {
+			@extend .container;
+			list-style-type: none;
+			height: 100%;
+			margin-bottom: 0;
+
+			&:after {
+				@include clearfix;
+			}
+
+			.menu-item {
+				float: left;
+				height: inherit;
+
+				&:nth-child(n+4) {
+					float: right;
+				}
+				
+				a {
+					display: block;
+					height: inherit;
+					padding: 0 15px;
+					font: 400 15px/68px $base-font;
+					color: $base-color;
+					text-decoration: none;
+					text-transform: uppercase;
+					@include transition(color .3s);
+
+					&:hover {
+						color: $primary-color;
+					}
+				}
+			}
+		}
+	}
+}
