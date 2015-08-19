@@ -19,13 +19,10 @@
 			</ul><!-- .menu -->
 		</nav><!-- .main-nav -->
 
-		<figure class="header-image">
-			<img src="" alt="">
-			<figcaption class="header-caption">
-				Lorem ipsum dolor sit amet, consectetur adipisicing.
-				<a class="header-button" href="#">Leia o nosso manifesto</a>
-			</figcaption>
-		</figure><!-- .header-image -->
+		<div class="header-caption">
+			Lorem ipsum dolor sit amet, consectetur adipisicing.
+			<a class="header-button" href="#">Leia o nosso manifesto</a>
+		</div><!-- .header-caption -->
 	</header><!-- .main-header -->
 
 	<section class="main-section">
