@@ -1,3 +1,5 @@
+<?php get_header(); ?>
+
 	<div class="header-caption">
 		<div class="caption-wrapper">
 			<h1>Bem-vindo à Comunidade Carioca de WordPress</h1>
