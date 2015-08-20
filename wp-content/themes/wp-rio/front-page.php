@@ -1,3 +1,5 @@
+<?php get_header(); ?>
+
 	<div class="header-caption">
 		<div class="caption-wrapper">
 			<h1>Bem-vindo à Comunidade Carioca de WordPress</h1>
@@ -85,3 +87,5 @@
 			<!-- formulario -->
 		</div><!-- .contact -->
 	</section><!-- .contact-area -->
+
+<?php get_footer(); ?>

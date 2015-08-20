@@ -9,12 +9,13 @@ wp-content/blogs.dir/
 wp-content/cache/
 wp-content/upgrade/
 wp-content/uploads/
+wp-content/plugins/advanced-custom-fields/
+wp-content/plugins/advanced-custom-fields-pro/
 wc-logs/
 wp-snapshots/
 
 # Theme
 wp-content/themes/wp-rio/node_modules/
-wp-content/plugins/advanced-custom-fields-pro/
 
 # Global
 ._*
