@@ -85,3 +85,5 @@
 			<!-- formulario -->
 		</div><!-- .contact -->
 	</section><!-- .contact-area -->
+
+<?php get_footer(); ?>
