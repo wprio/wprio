@@ -3,10 +3,6 @@ body {
 	height: 100%;
 }
 
-body {
-	font: 400 14px/1.28em $base-font;
-}
-
 h1,
 h2,
 h3,
@@ -15,10 +11,6 @@ h5,
 h6 {
 	font-weight: 700;
 	text-transform: uppercase;
-}
-
-h1 {
-	font-size: 20px;
 }
 
 .main-header {
@@ -118,5 +110,45 @@ h1 {
 				}
 			}
 		}
+	}
+}
+
+.next-event,
+.next-meetup {
+	@extend .container;
+}
+
+.meetup,
+.event {
+	@include make-row;
+}
+
+.event-image,
+.meetup-image {
+	@include make-md-column(4);
+}
+
+.event-content,
+.meetup-content {
+	@include make-md-column(8);
+}
+
+.slides-container {
+	@include clearfix;
+
+	.slide {
+		@include make-md-column(4);
+	}
+}
+
+.contact-area {
+	@include clearfix;
+
+	.blog {
+		@include make-md-column(5);
+	}
+
+	.contact {
+		@include make-md-column(7);
 	}
 }

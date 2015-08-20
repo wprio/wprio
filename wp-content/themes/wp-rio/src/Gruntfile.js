@@ -96,6 +96,7 @@ module.exports = function( grunt ) {
 					livereload: true
 				},
 				files: [
+					'<%= dirs.sass %>/*.scss',
 					'<%= dirs.css %>/*.css',
 					'<%= dirs.js %>/*.js',
 					'../**/*.php'
