@@ -33,14 +33,60 @@
 		</div><!-- .header-caption -->
 	</header><!-- .main-header -->
 
-	<section class="main-section">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-		Error commodi omnis porro, expedita quia velit.</p>
-	</section><!-- .main-section -->
+	<section class="next-event">
+		<!-- events loop -->
+		<article class="event">
+			<figure class="event-image"></figure>
+			<div class="event-content">
+				<h3 class="event-title">WordCamp Rio de Janeiro 2015</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum placeat voluptate accusantium dignissimos ducimus architecto numquam natus consectetur odit quod!</p>
+				<a href="#" class="event-link">Saiba mais desse evento</a>
+			</div>
+		</article><!-- .event -->
+	</section><!-- .next-event -->
+
+	<section class="next-meetup">
+		<article class="meetup">
+			<figure class="meetup-image"></figure>
+			<div class="meetup-content">
+				<h3 class="meetup-title">10º WordPress Meetup</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus facere velit magni dicta, corporis quod doloremque. Rerum cumque distinctio magnam!</p>
+				<a href="#" class="meetup-link">Saiba mais desse evento</a>
+			</div>
+		</article>
+
+		<div class="slides">
+			<h3>Procurando os slides desse encontro?</h3>
+
+			<div class="slides-container">
+				<div class="slide">
+					<figure class="slide-image"></figure>
+					<h4 class="slide-title">Lorem ipsum dolor sit.</h4>
+				</div>
+				<div class="slide">
+					<figure class="slide-image"></figure>
+					<h4 class="slide-title">Lorem ipsum dolor sit.</h4>
+				</div>
+				<div class="slide">
+					<figure class="slide-image"></figure>
+					<h4 class="slide-title">Lorem ipsum dolor sit.</h4>
+				</div>
+			</div>
+		</div><!--.slides -->
+	</section><!-- .next-meetup -->
+
+	<section class="partners">
+		<div class="partner"></div>
+		<div class="partner"></div>
+		<div class="partner"></div>
+		<div class="partner"></div>
+
+		<p>Quer colaborar com a Comunidade WordPress Carioca?</p>
+	</section><!-- .partners -->
 
 	<section class="contact-area">
 		<div class="blog">
-			<h3>Direto do blog</h3>
+			<h2>Direto do blog</h2>
 			<article class="blog-entry">
 				<figure class="blog-entry-image"></figure>
 				<h4 class="blog-entry-title">O juíz apita e começa a partida</h4>
@@ -50,7 +96,7 @@
 		</div><!-- .blog -->
 
 		<div class="contact">
-			<h3>Nossas Redes</h3>
+			<h2>Nossas Redes</h2>
 			<ul class="social-medias">
 				<li><a href="#">Facebook</a></li>
 				<li><a href="#">Twitter</a></li>
