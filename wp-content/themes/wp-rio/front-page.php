@@ -1,37 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<meta charset="UTF-8">
-	<title>WP Rio</title>
-	<?php wp_head(); ?>
-</head>
-<body>
-	<header class="main-header">
-		<nav class="main-nav">
-			<a id="logo" href="<?php echo home_url( '/' ); ?>" title="Ir para Home">
-				<img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="Logo WP Rio">
-			</a>
-			<ul class="menu">
-				<li class="menu-item"><a href="#">WordPress</a></li>
-				<li class="menu-item"><a href="#">Meetups</a></li>
-				<li class="menu-item"><a href="#">WordCamps</a></li>
-
-				<!-- float invertido, ordem inversa -->
-				<li class="menu-item"><a href="#">Contato</a></li>
-				<li class="menu-item"><a href="#">Blog</a></li>
-				<li class="menu-item"><a href="#">Comunidade</a></li>
-			</ul><!-- .menu -->
-		</nav><!-- .main-nav -->
-
-		<div class="header-caption">
-			<div class="caption-wrapper">
-				<h1>Bem-vindo à Comunidade Carioca de WordPress</h1>
-				<h2>Aqui, todos amamos WordPress e adoramos fazer poesia com ele!</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-				<a class="header-button" href="#">Leia o nosso manifesto</a>
-			</div>
-		</div><!-- .header-caption -->
-	</header><!-- .main-header -->
+	<div class="header-caption">
+		<div class="caption-wrapper">
+			<h1>Bem-vindo à Comunidade Carioca de WordPress</h1>
+			<h2>Aqui, todos amamos WordPress e adoramos fazer poesia com ele!</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+			<a class="header-button" href="#">Leia o nosso manifesto</a>
+		</div>
+	</div><!-- .header-caption -->
 
 	<section class="main-section">
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -65,12 +39,3 @@
 			<!-- formulario -->
 		</div><!-- .contact -->
 	</section><!-- .contact-area -->
-
-	<footer class="main-footer">
-		<span class="copyright">Comunidade WordPress Rio de Janeiro &copy;</span>
-		<span class="credits">Código é poesia</span>
-	</footer><!-- .main-footer -->
-
-	<?php wp_footer(); ?>
-</body>
-</html>
