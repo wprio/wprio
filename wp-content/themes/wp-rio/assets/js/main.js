@@ -18,4 +18,15 @@ jQuery(document).ready(function($) {
 	// Tooltip.
 	$( '.odin-tooltip' ).tooltip();
 
+	// Navigation
+	$( window ).scroll(function() {
+		var top = $(this).scrollTop();
+		if ( top > 0 ) {
+			$( '.main-nav' ).addClass( 'active' );
+		}
+		else {
+			$( '.main-nav' ).removeClass( 'active' );
+		}
+	});
+
 });
