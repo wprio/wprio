@@ -26,7 +26,7 @@
 			</article><!-- .event -->
 		</section><!-- .next-event -->
 
-		<section class="next-meetup">
+		<section class="last-meetup">
 			<article class="meetup">
 				<figure class="meetup-image"></figure>
 				<div class="meetup-content">
@@ -54,13 +54,15 @@
 					</div>
 				</div>
 			</div><!--.slides -->
-		</section><!-- .next-meetup -->
+		</section><!-- .last-meetup -->
 
 		<section class="partners">
-			<div class="partner"></div>
-			<div class="partner"></div>
-			<div class="partner"></div>
-			<div class="partner"></div>
+			<ul class="partners-list">
+				<li>Senac</li>
+				<li>ESPM</li>
+				<li>Caelum</li>
+				<li>Infnet</li>
+			</ul>
 
 			<p>Quer colaborar com a Comunidade WordPress Carioca?</p>
 		</section><!-- .partners -->

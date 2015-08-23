@@ -120,7 +120,9 @@ h6 {
 }
 
 .meetup,
-.event {
+.event,
+.partners-list,
+.contact-area {
 	@include make-row;
 }
 
@@ -151,5 +153,19 @@ h6 {
 
 	.contact {
 		@include make-md-column(7);
+	}
+}
+
+.main-footer {
+	font: 12px/1.16em $base-font;
+	height: 300px;
+	padding-top: 25px;
+	color: $white;
+	border-top: 4px solid $primary-color;
+	background: $base-color url('../images/footer.jpg') no-repeat center center;
+	@include clearfix;
+
+	.credits {
+		float: right;
 	}
 }

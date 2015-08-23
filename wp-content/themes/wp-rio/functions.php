@@ -162,6 +162,11 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
+
+		/*
+		 * Image sizes for cropping
+		 */
+		add_image_size( 'entry-thumb', 300, 225, array( 'center', 'center' ) );
 	}
 }
 
