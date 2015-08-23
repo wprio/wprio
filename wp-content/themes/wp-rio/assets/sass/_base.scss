@@ -119,11 +119,6 @@ h6 {
 	}
 }
 
-.next-event,
-.next-meetup {
-	@extend .container;
-}
-
 .meetup,
 .event {
 	@include make-row;
