@@ -9,116 +9,109 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: 700;
 	text-transform: uppercase;
 }
+	
+.main-nav {
+	position: fixed;
+	width: 100%;
+	height: 68px;
+	z-index: 999;
+	background-color: $light-gray;
 
-.main-header {
+	&.active #logo {
+		width: 100px;
+		margin-left: -50px;
+	}
+
+	#logo {
+		position: absolute;
+		display: block;
+		width: 200px;
+		left: 50%;
+		margin-left: -100px;
+		@include transition(all .3s);
+
+		img {
+			max-width: 100%;
+		}
+	}
+	
+	.menu {
+		@extend .container;
+		list-style-type: none;
+		height: 100%;
+		margin-bottom: 0;
+
+		&:after {
+			@include clearfix;
+		}
+
+		.menu-item {
+			float: left;
+			height: inherit;
+
+			&:nth-child(n+4) {
+				float: right;
+			}
+			
+			a {
+				display: block;
+				height: inherit;
+				padding: 0 15px;
+				font: 400 15px/68px $base-font;
+				color: $base-color;
+				text-decoration: none;
+				text-transform: uppercase;
+				@include transition(color .3s);
+
+				&:hover {
+					color: $primary-color;
+				}
+			}
+		}
+	}
+}
+
+.welcome-banner {
+	display: table;
+	width: 100%;
 	height: 100%;
 	max-height: 765px;
 	border-bottom: 4px solid $primary-color;
 	background: url('../images/header.jpg') no-repeat center center;
 
-	.header-caption {
-		@extend .container;
-		display: table;
-		height: 100%;
-		margin-top: -68px;
+	.banner-caption {
+		display: table-cell;
+		vertical-align: middle;
 		color: $white;
 
-		.caption-wrapper {
-			max-width: 575px;
-			display: table-cell;
-			vertical-align: middle;
-
-			h2 {
-				text-transform: none;
-			}
-
-			.header-button {
-				display: inline-block;
-				width: 410px;
-				height: 70px;
-				line-height: 70px;
-				text-align: center;
-				text-transform: uppercase;
-				font-size: 22px;
-				font-weight: 700;
-				color: $white;
-				border-radius: 5px;
-				background-color: $primary-color;
-				@include transition(background-color .3s);
-
-				&:after {
-					@extend .glyphicon;
-					margin-left: 25px;
-					top: 2px;
-					content: "\e258";
-				}
-
-				&:hover {
-					background-color: darken($primary-color, 15%);
-					text-decoration: none;
-				}
-			}
-		}
-	}
-	
-	.main-nav {
-		position: fixed;
-		width: 100%;
-		height: 68px;
-		z-index: 999;
-		background-color: $light-gray;
-
-		&.active #logo {
-			width: 100px;
-			margin-left: -50px;
-		}
-
-		#logo {
-			position: absolute;
-			display: block;
-			width: 200px;
-			left: 50%;
-			margin-left: -100px;
-			@include transition(all .3s);
-
-			img {
-				max-width: 100%;
-			}
-		}
-		
-		.menu {
+		.banner-container {
 			@extend .container;
-			list-style-type: none;
-			height: 100%;
-			margin-bottom: 0;
 
-			&:after {
-				@include clearfix;
-			}
+			.banner-wrapper {
+				max-width: 60%;
 
-			.menu-item {
-				float: left;
-				height: inherit;
-
-				&:nth-child(n+4) {
-					float: right;
+				h1 {
+					font-size: 22px;
 				}
-				
-				a {
-					display: block;
-					height: inherit;
-					padding: 0 15px;
-					font: 400 15px/68px $base-font;
-					color: $base-color;
-					text-decoration: none;
-					text-transform: uppercase;
-					@include transition(color .3s);
 
-					&:hover {
-						color: $primary-color;
+				h2 {
+					font-size: 18px;
+					text-transform: none;
+				}
+
+				.banner-button {
+					@extend .btn;
+					@extend .btn-primary;
+					@extend .btn-lg;
+					text-transform: uppercase;
+
+					&:after {
+						@extend .glyphicon;
+						margin-left: 25px;
+						top: 2px;
+						content: "\e258";
 					}
 				}
 			}

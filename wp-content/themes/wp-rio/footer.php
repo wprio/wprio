@@ -10,9 +10,9 @@
  */
 ?>
 <footer class="main-footer">
-        <span class="copyright">Comunidade WordPress Rio de Janeiro &copy;</span>
-        <span class="credits">Código é poesia</span>
-    </footer><!-- .main-footer -->
+    <span class="copyright">Comunidade WordPress Rio de Janeiro &copy;</span>
+    <span class="credits">Código é poesia</span>
+</footer><!-- .main-footer -->
 
     <?php wp_footer(); ?>
 </body>

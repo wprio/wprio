@@ -1,13 +1,17 @@
 <?php get_header(); ?>
 
-	<div class="header-caption">
-		<div class="caption-wrapper">
-			<h1>Bem-vindo à Comunidade Carioca de WordPress</h1>
-			<h2>Aqui, todos amamos WordPress e adoramos fazer poesia com ele!</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-			<a class="header-button" href="#">Leia o nosso manifesto</a>
-		</div>
-	</div><!-- .header-caption -->
+	<section class="welcome-banner">
+		<div class="banner-caption">
+			<div class="banner-container">
+				<div class="banner-wrapper">
+					<h1>Bem-vindo à Comunidade Carioca de WordPress</h1>
+					<h2>Aqui, todos amamos WordPress e adoramos fazer poesia com ele!</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+					<a class="banner-button" href="#">Leia o nosso manifesto</a>
+				</div><!-- .banner-wrapper -->
+			</div><!-- .banner-container -->
+		</div><!-- .banner-caption -->
+	</section><!-- .header-caption -->
 
 	<section class="next-event">
 		<!-- events loop -->

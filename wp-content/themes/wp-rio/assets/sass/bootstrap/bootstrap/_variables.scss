@@ -108,7 +108,7 @@ $line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Ch
 $line-height-small:         1.5 !default;
 
 $border-radius-base:        4px !default;
-$border-radius-large:       6px !default;
+$border-radius-large:       5px !default;
 $border-radius-small:       3px !default;
 
 //** Global color for active items (e.g., navs or dropdowns).
@@ -149,13 +149,13 @@ $table-border-color:            #ddd !default;
 
 $btn-font-weight:                normal !default;
 
-$btn-default-color:              #333 !default;
-$btn-default-bg:                 #fff !default;
-$btn-default-border:             #ccc !default;
+$btn-default-color:              #fff !default;
+$btn-default-bg:                 #4ab2d7 !default;
+$btn-default-border:             #4ab2d7 !default;
 
 $btn-primary-color:              #fff !default;
-$btn-primary-bg:                 $brand-primary !default;
-$btn-primary-border:             darken($btn-primary-bg, 5%) !default;
+$btn-primary-bg:                 #f7941d !default;
+$btn-primary-border:             darken(#f7941d, 5%) !default;
 
 $btn-success-color:              #fff !default;
 $btn-success-bg:                 $brand-success !default;
