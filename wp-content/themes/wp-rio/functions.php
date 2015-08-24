@@ -401,6 +401,49 @@ function cpt_meetups() {
 }
 add_action( 'init', 'cpt_meetups', 0 );
 
+function cpt_slides() {
+
+	$labels = array(
+		'name'                => _x( 'Slides', 'wp-rio-locale' ),
+		'singular_name'       => _x( 'Slide', 'wp-rio-locale' ),
+		'menu_name'           => __( 'Slides', 'wp-rio-locale' ),
+		'name_admin_bar'      => __( 'Slides', 'wp-rio-locale' ),
+		'parent_item_colon'   => __( 'Slide Pai', 'wp-rio-locale' ),
+		'all_items'           => __( 'Todos os slides', 'wp-rio-locale' ),
+		'add_new_item'        => __( 'Adicionar novo slide', 'wp-rio-locale' ),
+		'add_new'             => __( 'Adicionar novo', 'wp-rio-locale' ),
+		'new_item'            => __( 'Adicionar novo', 'wp-rio-locale' ),
+		'edit_item'           => __( 'Editar slide', 'wp-rio-locale' ),
+		'update_item'         => __( 'Atualizar slide', 'wp-rio-locale' ),
+		'view_item'           => __( 'Ver slide', 'wp-rio-locale' ),
+		'search_items'        => __( 'Buscar slide', 'wp-rio-locale' ),
+		'not_found'           => __( 'Não Encontrado', 'wp-rio-locale' ),
+		'not_found_in_trash'  => __( 'Não Encontrado na Lixeira', 'wp-rio-locale' ),
+	);
+	$args = array(
+		'label'               => __( 'Slides de eventos', 'wp-rio-locale' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'thumbnail' ),
+		'taxonomies'          => array( ),
+		'menu_icon'			  => 'dashicons-media-interactive',
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'menu_position'       => 5,
+		'show_in_admin_bar'   => true,
+		'show_in_nav_menus'   => true,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+	);
+	register_post_type( 'slides', $args );
+
+}
+add_action( 'init', 'cpt_slides', 0 );
+
 // Register Custom Taxonomy
 function taxonomy_cidades_wordcamp() {
 
