@@ -9,3 +9,15 @@
     "odin/core",           	// Odin        Styles Core
     "base"               	// Theme       Custom Layout
 ;
+
+// ==========================================================================
+// Theme Templates
+// ==========================================================================
+
+@import
+	"templates/front-page",
+	"templates/meetups",
+	"templates/wordcamps",
+	"templates/page",
+	"templates/single"
+;

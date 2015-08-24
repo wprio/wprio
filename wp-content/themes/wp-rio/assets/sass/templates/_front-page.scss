@@ -1,0 +1,104 @@
+.welcome-banner {
+	display: table;
+	width: 100%;
+	height: 100%;
+	max-height: 765px;
+	border-bottom: 4px solid $primary-color;
+	background: url('../images/header.jpg') no-repeat center center;
+
+	.banner-caption {
+		display: table-cell;
+		vertical-align: middle;
+		color: $white;
+
+		.banner-container {
+			@extend .container;
+
+			.banner-wrapper {
+				max-width: 60%;
+
+				h1 {
+					font-size: 22px;
+				}
+
+				h2 {
+					font-size: 18px;
+					text-transform: none;
+				}
+
+				.btn-banner {
+					text-transform: uppercase;
+					font-weight: 500px;
+
+					&:after {
+						@extend .glyphicon;
+						margin-left: 25px;
+						top: 2px;
+						content: "\e258";
+					}
+				}
+			}
+		}
+	}
+}
+
+.meetup,
+.event,
+.partners-list,
+.contact-wrapper {
+	@include make-row;
+}
+
+.event-image,
+.meetup-image {
+	@include make-md-column(4);
+}
+
+.event-content,
+.meetup-content {
+	@include make-md-column(8);
+}
+
+.slides-container {
+	@include clearfix;
+
+	.slide {
+		@include make-md-column(4);
+	}
+}
+
+.contact-area {
+	margin-top: 50px;
+	margin-bottom: 75px;
+	padding-top: 40px;
+	border-top: 1px solid $primary-color;
+
+	h2 {
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+
+	h3 {
+		margin-top: 35px;
+		margin-bottom: 15px;
+	}
+
+	.blog {
+		@include make-md-column(5);
+	}
+
+	.contact {
+		@include make-md-column(7);
+
+		.social-medias {
+			list-style-type: none;
+			padding: 0;
+			margin: 0 0 40px;
+
+			li {
+				display: inline-block;
+				margin: 0 9px;
+			}
+		}
+	}
+}

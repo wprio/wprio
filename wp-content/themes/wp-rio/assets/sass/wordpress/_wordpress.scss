@@ -134,6 +134,9 @@ img {
     &.wp-post-image {
         max-width: 100%;
         height: auto;
+        -webkit-border-radius: 3px;
+        -moz--webkit-border-radius: 3px;
+        border-radius: 3px;
     }
     &.wp-smiley, .rsswidget & {
         border: none;

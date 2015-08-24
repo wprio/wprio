@@ -1,154 +1,108 @@
 html,
 body {
 	height: 100%;
+	color: $base-color;
 }
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-weight: 700;
+h2 {
 	text-transform: uppercase;
 }
 
-.main-header {
-	height: 100%;
-	max-height: 765px;
-	border-bottom: 4px solid $primary-color;
-	background: url('../images/header.jpg') no-repeat center center;
+.btn {
+	&:after {
+		@extend .glyphicon;
+		top: 2px;
+		content: "\e258";
+	}
 
-	.header-caption {
-		@extend .container;
-		display: table;
-		height: 100%;
-		margin-top: -68px;
-		color: $white;
+	&.btn-default {
+		&:after {
+			margin-left: 15px;
+		}
+	}
 
-		.caption-wrapper {
-			max-width: 575px;
-			display: table-cell;
-			vertical-align: middle;
+	&.btn-lg {
+		&:after {
+			margin-left: 25px;
+		}
+	}
+}
+	
+.main-nav {
+	position: fixed;
+	width: 100%;
+	height: 68px;
+	z-index: 999;
+	background-color: $light-gray;
 
-			h2 {
-				text-transform: none;
-			}
+	&.active #logo {
+		width: 100px;
+		margin-left: -50px;
+	}
 
-			.header-button {
-				display: inline-block;
-				width: 410px;
-				height: 70px;
-				line-height: 70px;
-				text-align: center;
-				text-transform: uppercase;
-				font-size: 22px;
-				font-weight: 700;
-				color: $white;
-				border-radius: 5px;
-				background-color: $primary-color;
-				@include transition(background-color .3s);
+	#logo {
+		position: absolute;
+		display: block;
+		width: 200px;
+		left: 50%;
+		margin-left: -100px;
+		@include transition(all .3s);
 
-				&:after {
-					@extend .glyphicon;
-					margin-left: 25px;
-					top: 2px;
-					content: "\e258";
-				}
-
-				&:hover {
-					background-color: darken($primary-color, 15%);
-					text-decoration: none;
-				}
-			}
+		img {
+			max-width: 100%;
 		}
 	}
 	
-	.main-nav {
-		position: relative;
-		height: 68px;
-		background-color: $light-gray;
+	.menu {
+		@extend .container;
+		list-style-type: none;
+		height: 100%;
+		margin-bottom: 0;
 
-		#logo {
-			position: absolute;
-			display: block;
-			left: 50%;
-			margin-left: -100px;
+		&:after {
+			@include clearfix;
 		}
-		
-		.menu {
-			@extend .container;
-			list-style-type: none;
-			height: 100%;
-			margin-bottom: 0;
 
-			&:after {
-				@include clearfix;
+		.menu-item {
+			float: left;
+			height: inherit;
+
+			&:nth-child(n+4) {
+				float: right;
 			}
-
-			.menu-item {
-				float: left;
+			
+			a {
+				display: block;
 				height: inherit;
+				padding: 0 15px;
+				font-weight: 400;
+				font-size: 15px;
+				line-height: 68px;
+				color: $base-color;
+				text-decoration: none;
+				text-transform: uppercase;
+				@include transition(color .3s);
 
-				&:nth-child(n+4) {
-					float: right;
-				}
-				
-				a {
-					display: block;
-					height: inherit;
-					padding: 0 15px;
-					font: 400 15px/68px $base-font;
-					color: $base-color;
-					text-decoration: none;
-					text-transform: uppercase;
-					@include transition(color .3s);
-
-					&:hover {
-						color: $primary-color;
-					}
+				&:hover {
+					color: $primary-color;
 				}
 			}
 		}
 	}
 }
 
-.next-event,
-.next-meetup {
-	@extend .container;
-}
-
-.meetup,
-.event {
-	@include make-row;
-}
-
-.event-image,
-.meetup-image {
-	@include make-md-column(4);
-}
-
-.event-content,
-.meetup-content {
-	@include make-md-column(8);
-}
-
-.slides-container {
+.main-footer {
+	font-size: 12px;
+	line-height: 1.16em;
+	height: 300px;
+	padding-top: 25px;
+	color: $white;
+	border-top: 4px solid $primary-color;
+	background: $base-color url('../images/footer.jpg') no-repeat center center;
 	@include clearfix;
 
-	.slide {
-		@include make-md-column(4);
-	}
-}
-
-.contact-area {
-	@include clearfix;
-
-	.blog {
-		@include make-md-column(5);
-	}
-
-	.contact {
-		@include make-md-column(7);
+	.credits {
+		float: right;
 	}
 }
