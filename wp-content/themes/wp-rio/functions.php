@@ -1026,4 +1026,4 @@ if( function_exists('register_field_group') ){
 	));
 }
 
-define( 'ACF_LITE' , true );
+define( 'ACF_LITE' , false );
