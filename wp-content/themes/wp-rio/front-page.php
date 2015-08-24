@@ -70,12 +70,19 @@
 		<section class="contact-area">
 			<div class="blog">
 				<h2>Direto do blog</h2>
+
+				<?php if ( have_posts() ) : while( have_posts() ) : the_post(); ?>
 				<article class="blog-entry">
-					<figure class="blog-entry-image"></figure>
-					<h4 class="blog-entry-title">O juíz apita e começa a partida</h4>
-					<p class="blog-entry-excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, ratione.</p>
-					<a class="blog-entry-link" href="#">Leia esse artigo completo</a>
+					<figure class="blog-entry-image">
+						<?php the_post_thumbnail( 'entry-thumb' ); ?>
+					</figure>
+					<h4 class="blog-entry-title"><?php the_title(); ?></h4>
+					<p class="blog-entry-excerpt"><?php the_excerpt(); ?></p>
+					<a class="blog-entry-link" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">Leia esse artigo completo</a>
 				</article><!-- .blog-entry -->
+				<?php endwhile; else : ?>
+				<p>Desculpe, mas nenhum post foi encontrado. :(</p>
+				<?php endif; ?>
 			</div><!-- .blog -->
 
 			<div class="contact">
