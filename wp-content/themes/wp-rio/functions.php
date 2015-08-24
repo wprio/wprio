@@ -421,7 +421,7 @@ function cpt_slides() {
 		'not_found_in_trash'  => __( 'Não Encontrado na Lixeira', 'wp-rio-locale' ),
 	);
 	$args = array(
-		'label'               => __( 'Slides de eventos', 'wp-rio-locale' ),
+		'label'               => __( 'Post Type', 'wp-rio-locale' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'thumbnail' ),
 		'taxonomies'          => array( ),
