@@ -712,6 +712,108 @@ if( function_exists('register_field_group') ){
 		'instruction_placement' => 'label',
 		'hide_on_screen' => '',
 	));
-}
 
-define( 'ACF_LITE' , true );
+	register_field_group(array (
+		'key' => 'group_55db6a20ae0e0',
+		'title' => 'Home',
+		'fields' => array (
+			array (
+				'key' => 'field_55db6bf9dbf9a',
+				'label' => 'Exibir área de parceiros',
+				'name' => 'area-de-parceiros',
+				'prefix' => '',
+				'type' => 'true_false',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'message' => '',
+				'default_value' => 0,
+			),
+			array (
+				'key' => 'field_55db6bb5dbf96',
+				'label' => 'Parceiros',
+				'name' => 'parceiros',
+				'prefix' => '',
+				'type' => 'repeater',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array (
+					array (
+						array (
+							'field' => 'field_55db6bf9dbf9a',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+				),
+				'min' => '',
+				'max' => '',
+				'layout' => 'row',
+				'button_label' => 'Adicionar Parceiro',
+				'sub_fields' => array (
+					array (
+						'key' => 'field_55db6bbfdbf97',
+						'label' => 'Nome',
+						'name' => 'nome-parceiro',
+						'prefix' => '',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+						'readonly' => 0,
+						'disabled' => 0,
+					),
+					array (
+						'key' => 'field_55db6bc7dbf98',
+						'label' => 'Link',
+						'name' => 'link-parceiro',
+						'prefix' => '',
+						'type' => 'url',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+					),
+					array (
+						'key' => 'field_55db6bd1dbf99',
+						'label' => 'Logo',
+						'name' => 'logo-parceiro',
+						'prefix' => '',
+						'type' => 'image',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'column_width' => '',
+						'return_format' => 'array',
+						'preview_size' => 'thumbnail',
+						'library' => 'all',
+					),
+				),
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'options_page',
+					'operator' => '==',
+					'value' => 'acf-options',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+	));
+}
+//define( 'ACF_LITE' , true );

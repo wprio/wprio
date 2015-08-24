@@ -168,6 +168,7 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		 */
 		add_image_size( 'entry-thumb', 300, 225, array( 'center', 'center' ) );
 		add_image_size( 'entry-large', 940, 350, array( 'center', 'center' ) );
+		add_image_size( 'partners-thumb', 220, 165, array( 'center', 'center' ) );
 	}
 }
 

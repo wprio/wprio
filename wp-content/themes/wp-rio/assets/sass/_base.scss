@@ -5,12 +5,28 @@ body {
 }
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2 {
 	text-transform: uppercase;
+}
+
+.btn {
+	&:after {
+		@extend .glyphicon;
+		top: 2px;
+		content: "\e258";
+	}
+
+	&.btn-default {
+		&:after {
+			margin-left: 15px;
+		}
+	}
+
+	&.btn-lg {
+		&:after {
+			margin-left: 25px;
+		}
+	}
 }
 	
 .main-nav {
@@ -60,7 +76,9 @@ h6 {
 				display: block;
 				height: inherit;
 				padding: 0 15px;
-				font: 400 15px/68px $base-font;
+				font-weight: 400;
+				font-size: 15px;
+				line-height: 68px;
 				color: $base-color;
 				text-decoration: none;
 				text-transform: uppercase;
@@ -75,7 +93,8 @@ h6 {
 }
 
 .main-footer {
-	font: 12px/1.16em $base-font;
+	font-size: 12px;
+	line-height: 1.16em;
 	height: 300px;
 	padding-top: 25px;
 	color: $white;

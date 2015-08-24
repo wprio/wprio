@@ -26,11 +26,9 @@
 					text-transform: none;
 				}
 
-				.banner-button {
-					@extend .btn;
-					@extend .btn-primary;
-					@extend .btn-lg;
+				.btn-banner {
 					text-transform: uppercase;
+					font-weight: 500px;
 
 					&:after {
 						@extend .glyphicon;
@@ -47,7 +45,7 @@
 .meetup,
 .event,
 .partners-list,
-.contact-area {
+.contact-wrapper {
 	@include make-row;
 }
 
@@ -70,7 +68,20 @@
 }
 
 .contact-area {
-	@include clearfix;
+	margin-top: 50px;
+	margin-bottom: 75px;
+	padding-top: 40px;
+	border-top: 1px solid $primary-color;
+
+	h2 {
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+
+	h3 {
+		margin-top: 35px;
+		margin-bottom: 15px;
+	}
 
 	.blog {
 		@include make-md-column(5);
@@ -78,5 +89,16 @@
 
 	.contact {
 		@include make-md-column(7);
+
+		.social-medias {
+			list-style-type: none;
+			padding: 0;
+			margin: 0 0 40px;
+
+			li {
+				display: inline-block;
+				margin: 0 9px;
+			}
+		}
 	}
 }
