@@ -163,7 +163,7 @@ $args = array(
 	'show_in_nav_menus'          => true,
 	'show_tagcloud'              => true,
 	);
-register_taxonomy( 'cidades', array( 'meetups','wordcamps' ), $args );
+register_taxonomy( 'cidades', array( 'wordcamps' ), $args );
 
 }
 add_action( 'init', 'taxonomy_cidades_wordcamp', 0 );
