@@ -241,7 +241,7 @@ register_field_group(array (
 			'min' => '',
 			'max' => '',
 			'layout' => 'row',
-			'button_label' => 'Adicionar Linha',
+			'button_label' => 'Adicionar Nova Pessoa',
 			'sub_fields' => array (
 				array (
 					'key' => 'field_55d5470a6796f',
@@ -969,7 +969,7 @@ register_field_group(array (
 			'name' => 'social-icons',
 			'prefix' => '',
 			'type' => 'repeater',
-			'instructions' => 'Adicionar a classe do glyphicon do Bootstrap - <a href="http://getbootstrap.com/components/#glyphicons" target="_blank">http://getbootstrap.com/components/#glyphicons</a>',
+			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => array (
 				array (
@@ -983,7 +983,7 @@ register_field_group(array (
 			'min' => '',
 			'max' => '',
 			'layout' => 'row',
-			'button_label' => 'Adicionar Novo',
+			'button_label' => 'Adicionar Novo Ícone',
 			'sub_fields' => array (
 				array (
 			'key' => 'field_55d53fdb9c517',
