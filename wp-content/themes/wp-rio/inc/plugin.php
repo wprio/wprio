@@ -912,8 +912,8 @@ if( function_exists('acf_add_local_field_group') ){
 				'elements' => array (
 					0 => 'featured_image',
 					),
-				'min' => 1,
-				'max' => 1,
+				'min' => '',
+				'max' => '',
 				'return_format' => 'object',
 				),
 			array (
@@ -996,8 +996,8 @@ if( function_exists('acf_add_local_field_group') ){
 				'elements' => array (
 					0 => 'featured_image',
 					),
-				'min' => 1,
-				'max' => 1,
+				'min' => '',
+				'max' => '',
 				'return_format' => 'object',
 				),
 			array (
