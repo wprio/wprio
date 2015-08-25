@@ -1,16 +1,17 @@
 <?php get_header(); ?>
 
 	<section class="welcome-banner">
+		<?php $destaque = get_field( 'destaque-home', 'options' ); ?>
+		<?php if ( $destaque ) : ?>
 		<div class="banner-caption">
 			<div class="banner-container">
 				<div class="banner-wrapper">
-					<h1>Bem-vindo à Comunidade Carioca de WordPress</h1>
-					<h2>Aqui, todos amamos WordPress e adoramos fazer poesia com ele!</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+					<?php the_field( 'texto-destaque-home', 'options' ); ?>
 					<a class="btn btn-primary btn-lg btn-banner" href="#">Leia o nosso manifesto</a>
 				</div><!-- .banner-wrapper -->
 			</div><!-- .banner-container -->
 		</div><!-- .banner-caption -->
+		<?php endif; ?>
 	</section><!-- .header-caption -->
 
 	<div class="container">
