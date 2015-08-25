@@ -15,7 +15,7 @@
 			@extend .container;
 
 			.banner-wrapper {
-				max-width: 60%;
+				max-width: 600px;
 
 				h1 {
 					font-size: 22px;
@@ -28,7 +28,7 @@
 
 				.btn-banner {
 					text-transform: uppercase;
-					font-weight: 500px;
+					font-weight: 500;
 
 					&:after {
 						@extend .glyphicon;
