@@ -7,8 +7,13 @@
  */
 
 get_header(); ?>
+	<section class="full-banner">
+		<?php if ( has_post_thumbnail() ) : ?>
+		
+		<?php endif; ?>
+	</section><!-- .header-caption -->
 
-	<div id="primary" class="<?php echo odin_classes_page_sidebar(); ?>">
+	<div class="container wordcamps internal single">	
 		<main id="main-content" class="site-main" role="main">
 			<?php
 				// Start the Loop.
@@ -21,6 +26,25 @@ get_header(); ?>
 					 */
 					get_template_part( 'content', get_post_format() );
 
+					$slides = get_field('slides-palestras');
+
+					if ($slides):
+						echo "<hr />";
+						echo "<h2>Acesse todos os slides desse WordCamp</h2>";
+						foreach( $slides as $slide ):
+							echo "<div class='col-md-4'>";
+								if ( has_post_thumbnail() ) {
+									echo get_the_post_thumbnail($slide->ID, 'partners-thumb');
+									
+								}
+								$link_slide = get_field('link-slide', $slide->ID);
+								echo "<h3><a href='".$link_slide."' target='_blank'>".get_the_title($slide->ID)."</a></h3>";
+							echo "</div>";
+						endforeach;
+					endif;
+					
+				
+
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) :
 						comments_template();
@@ -28,8 +52,9 @@ get_header(); ?>
 				endwhile;
 			?>
 		</main><!-- #main -->
-	</div><!-- #primary -->
+
+	</div>
 
 <?php
-get_sidebar();
 get_footer();
+?>

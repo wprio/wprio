@@ -36,7 +36,7 @@ get_header(); ?>
 							<div class="col-md-4">
 							<?php 
 								if ( has_post_thumbnail() ) {
-									echo '<a href="<?php the_permalink(); ?>">';
+									echo '<a href="'.get_the_permalink().'">';
 									the_post_thumbnail('partners-thumb');
 									echo '</a>';
 								}
