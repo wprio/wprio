@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Template Wordcamps
- * The Template for displaying all wordcamps
+ * Template Name: Template Meetups
+ * The Template for displaying all meetups
  *
  * @package Odin
  * @since 2.2.0
@@ -23,12 +23,12 @@ get_header(); ?>
 				endwhile;
 			?>
 			<?php 
-				$wordcamps = new WP_Query(['post_type' => 'wordcamps']);
+				$wordcamps = new WP_Query(['post_type' => 'meetups']);
 				if ( $wordcamps->have_posts() ):
 			?>
 					<hr />
 					<section class="events">
-						<h2>ÚLTIMOS EDIÇÕES DO WORDCAMP CARIOCA</h2>
+						<h2>ÚLTIMOS EDIÇÕES DO MEETUP CARIOCA</h2>
 						<?php
 							
 							while ( $wordcamps->have_posts() ) : $wordcamps->the_post();
