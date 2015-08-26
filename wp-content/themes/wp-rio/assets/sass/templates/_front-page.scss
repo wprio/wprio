@@ -45,8 +45,25 @@
 .meetup,
 .event,
 .partners-list,
-.contact-wrapper {
+.blog-area {
 	@include make-row;
+}
+
+.home .container section {
+	padding-top: 40px;
+	border-top: 1px solid $primary-color;
+
+	h2 {
+		margin: 0 0 25px;
+	}
+}
+
+.home .container section:first-child {
+	border-top: none;
+}
+
+.event {
+	margin-bottom: 45px;
 }
 
 .event-image,
@@ -54,9 +71,22 @@
 	@include make-md-column(4);
 }
 
+.event-title,
+.meetup-title {
+	margin: 5px 0 20px;
+}
+
 .event-content,
 .meetup-content {
 	@include make-md-column(8);
+	position: relative;
+	min-height: 220px;
+
+	.btn {
+		position: absolute;
+		left: 15px;
+		bottom: 0;
+	}
 }
 
 .slides-container {
@@ -67,11 +97,10 @@
 	}
 }
 
-.contact-area {
+.blog-area {
 	margin-top: 50px;
 	margin-bottom: 75px;
 	padding-top: 40px;
-	border-top: 1px solid $primary-color;
 
 	h2 {
 		margin-top: 0;
@@ -83,22 +112,7 @@
 		margin-bottom: 15px;
 	}
 
-	.blog {
-		@include make-md-column(5);
-	}
-
-	.contact {
-		@include make-md-column(7);
-
-		.social-medias {
-			list-style-type: none;
-			padding: 0;
-			margin: 0 0 40px;
-
-			li {
-				display: inline-block;
-				margin: 0 9px;
-			}
-		}
+	.blog-entry {
+		@include make-md-column(4);
 	}
 }

@@ -105,4 +105,15 @@ h2 {
 	.credits {
 		float: right;
 	}
+
+	.social-medias {
+		list-style-type: none;
+		padding: 0;
+		margin: 0 0 40px;
+
+		li {
+			display: inline-block;
+			margin: 0 9px;
+		}
+	}
 }
