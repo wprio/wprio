@@ -9,7 +9,13 @@
 
 get_header(); ?>
 
-	<div id="primary" class="<?php echo odin_classes_page_sidebar(); ?>">
+	<section class="full-banner">
+		<?php if ( has_post_thumbnail() ) : ?>
+		
+		<?php endif; ?>
+	</section><!-- .header-caption -->
+
+	<div class="container internal">	
 		<main id="main-content" class="site-main" role="main">
 			<?php
 				// Start the Loop.
@@ -26,8 +32,7 @@ get_header(); ?>
 				endwhile;
 			?>
 		</main><!-- #main -->
-	</div><!-- #primary -->
+	</div>
 
 <?php
-get_sidebar();
 get_footer();
