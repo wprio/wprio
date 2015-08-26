@@ -1,18 +1,23 @@
 <?php get_header(); ?>
 
+	<?php $destaque = get_field( 'destaque-home', 'options' ); ?>
+	<?php if ( $destaque ) : ?>
 	<section class="welcome-banner">
-		<?php $destaque = get_field( 'destaque-home', 'options' ); ?>
-		<?php if ( $destaque ) : ?>
 		<div class="banner-caption">
 			<div class="banner-container">
 				<div class="banner-wrapper">
 					<?php the_field( 'texto-destaque-home', 'options' ); ?>
-					<a class="btn btn-primary btn-lg btn-banner" href="#">Leia o nosso manifesto</a>
+					
+					<?php if ( get_field( 'botao-destaque-home', 'options' ) ) : ?>
+					<a class="btn btn-primary btn-lg btn-banner" href="<?php the_field( 'link-botao-home', 'options' ); ?>">
+						<?php the_field( 'texto-botao-home', 'options' ); ?>
+					</a>
+					<?php endif; ?>
 				</div><!-- .banner-wrapper -->
 			</div><!-- .banner-container -->
 		</div><!-- .banner-caption -->
-		<?php endif; ?>
 	</section><!-- .header-caption -->
+	<?php endif; ?>
 
 	<div class="container">
 		<?php
