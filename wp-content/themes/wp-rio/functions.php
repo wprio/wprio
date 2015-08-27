@@ -286,6 +286,22 @@ if ( ! function_exists( 'is_woocommerce_activated' ) ) {
 }
 
 /**
+ * Custom Query Modifier for Home
+ *
+ * @since 1.0
+ *
+ * @return object
+ */
+
+function home_posts_limit( $query ) {
+	if ( $query->is_home() && $query->is_main_query() ) {
+		$query->set( 'posts_per_page', 3 );
+	}
+}
+
+add_action( 'pre_get_posts', 'home_posts_limit' );
+
+/**
  * Core Helpers.
  */
 require_once get_template_directory() . '/core/helpers.php';

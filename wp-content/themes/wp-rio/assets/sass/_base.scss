@@ -35,6 +35,7 @@ h2 {
 	height: 68px;
 	z-index: 999;
 	background-color: $light-gray;
+	top: 0;
 
 	&.active #logo {
 		width: 100px;
@@ -92,6 +93,36 @@ h2 {
 	}
 }
 
+.admin-bar .main-nav {
+	top: 32px;
+}
+
+.context-banner {
+	height: 110px;
+	margin-top: 68px;
+	border-bottom: 4px solid $primary-color;
+}
+
+.meetups .context-banner {
+	background-image: url('../images/banners/context.jpg');
+}
+
+.wordcamps .context-banner {
+	background-image: url('../images/banners/context.jpg');
+}
+
+.blog .context-banner {
+	background-image: url('../images/banners/context.jpg');
+}
+
+.single .context-banner {
+	background-image: url('../images/banners/context.jpg');
+}
+
+.page .context-banner {
+	background-image: url('../images/banners/context.jpg');
+}
+
 .main-footer {
 	font-size: 12px;
 	line-height: 1.16em;
@@ -103,6 +134,29 @@ h2 {
 	@include clearfix;
 
 	.credits {
+		text-align: right;
 		float: right;
+	}
+
+	.social-medias {
+		list-style-type: none;
+		padding: 0;
+		margin: 20px 0 0;
+
+		li {
+			display: inline-block;
+			margin: 0 9px;
+
+			a {
+				font-size: 30px;
+				text-decoration: none;
+				color: $white;
+				@include transition(color .3s);
+
+				&:hover {
+					color: $primary-color;
+				}
+			}
+		}
 	}
 }

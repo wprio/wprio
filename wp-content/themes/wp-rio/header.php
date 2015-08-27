@@ -31,3 +31,7 @@
             <li class="menu-item"><a href="#">Comunidade</a></li>
         </ul><!-- .menu -->
     </nav><!-- .main-nav -->
+
+    <?php if ( ! is_home() ) : ?>
+    <div class="context-banner"></div>
+    <?php endif; ?>
