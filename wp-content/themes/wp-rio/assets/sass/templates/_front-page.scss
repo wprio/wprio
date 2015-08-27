@@ -42,10 +42,7 @@
 	}
 }
 
-.meetup,
-.event,
-.partners-list,
-.blog-area {
+.partners-list {
 	@include make-row;
 }
 
@@ -62,7 +59,8 @@
 	border-top: none;
 }
 
-.event {
+.event,
+.meetup {
 	margin-bottom: 45px;
 }
 
@@ -89,11 +87,17 @@
 	}
 }
 
-.slides-container {
-	@include clearfix;
+.slides {
+	border-top: 1px dashed $secondary-color;
+	margin-top: 50px;
+	padding-top: 40px;
 
 	.slide {
 		@include make-md-column(4);
+
+		.slide-title {
+			font-size: 16px;
+		}
 	}
 }
 
