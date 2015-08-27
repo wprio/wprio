@@ -14,16 +14,16 @@
 	    <span class="copyright">Comunidade WordPress Rio de Janeiro &copy;</span>
 	    <span class="credits">
 	    	Código é poesia
-	    	
+	    	<?php
+	    		$social = get_field( 'social-icons', 'options' );
+	    		if ( have_rows( 'social-icons', 'options' ) ) :
+	    	?>
 	    	<ul class="social-medias">
-				<li><a href="#">Facebook</a></li>
-				<li><a href="#">Twitter</a></li>
-				<li><a href="#">Google +</a></li>
-				<li><a href="#">Instagram</a></li>
-				<li><a href="#">Meetup</a></li>
-				<li><a href="#">GitHub</a></li>
-				<li><a href="#">YouTube</a></li>
+	    		<?php while ( have_rows( 'social-icons', 'options' ) ) : the_row(); ?>
+				<li><a href="<?php the_sub_field( 'link-icon', 'options' ); ?>"><?php the_sub_field( 'icon-class-footer', 'options' ); ?></a></li>
+				<?php endwhile; ?>
 			</ul><!-- .social-medias -->
+			<?php endif; ?>
 	    </span>
     </div><!-- .container -->
 </footer><!-- .main-footer -->
