@@ -20,16 +20,23 @@
         <a id="logo" href="<?php echo home_url( '/' ); ?>" title="Ir para Home">
             <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="Logo WP Rio">
         </a>
-        <ul class="menu">
-            <li class="menu-item"><a href="#">WordPress</a></li>
-            <li class="menu-item"><a href="#">Meetups</a></li>
-            <li class="menu-item"><a href="#">WordCamps</a></li>
+        <?php
+            if ( has_nav_menu( 'main-menu' ) ) :
+                $defaults = array(
+                    'theme_location'  => 'main-menu',
+                    'container'       => false,
+                    'menu_class'      => 'menu',
+                    'depth'           => 1,
+                );
 
-            <!-- float invertido, ordem inversa -->
-            <li class="menu-item"><a href="#">Contato</a></li>
-            <li class="menu-item"><a href="#">Blog</a></li>
-            <li class="menu-item"><a href="#">Comunidade</a></li>
-        </ul><!-- .menu -->
+                wp_nav_menu( $defaults );
+
+            else :
+        ?>
+            <ul class="menu">
+                <li class="menu-item"><a href="<?php echo admin_url( 'nav-menus.php' ); ?>">Adicione um menu</a></li>
+            </ul>
+        <?php endif; ?>
     </nav><!-- .main-nav -->
 
     <?php if ( ! is_home() ) : ?>
