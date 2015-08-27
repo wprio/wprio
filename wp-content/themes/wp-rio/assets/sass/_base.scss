@@ -103,6 +103,29 @@ h2 {
 	@include clearfix;
 
 	.credits {
+		text-align: right;
 		float: right;
+	}
+
+	.social-medias {
+		list-style-type: none;
+		padding: 0;
+		margin: 20px 0 0;
+
+		li {
+			display: inline-block;
+			margin: 0 9px;
+
+			a {
+				font-size: 30px;
+				text-decoration: none;
+				color: $white;
+				@include transition(color .3s);
+
+				&:hover {
+					color: $primary-color;
+				}
+			}
+		}
 	}
 }
