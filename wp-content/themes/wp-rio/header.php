@@ -32,6 +32,6 @@
         </ul><!-- .menu -->
     </nav><!-- .main-nav -->
 
-    <?php if ( ! is_home() ) : ?>
+    <?php if ( ! is_front_page() ) : ?>
     <div class="context-banner"></div>
     <?php endif; ?>

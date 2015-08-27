@@ -1,0 +1,37 @@
+.blog-header h1 {
+	font-weight: 700;
+}
+
+.blog-header p {
+	font-size: 14px;
+}
+
+.entry {
+	margin-top: 40px;
+	padding-top: 50px;
+	border-top: 1px solid $primary-color;
+
+	&:last-child {
+		padding-bottom: 50px;
+	}
+
+	.entry-title {
+		font-size: 22px;
+		font-weight: 400;
+		margin-bottom: 15px;
+	}
+
+	.entry-meta {
+		display: block;
+	}
+
+	.entry-image {
+		margin: 20px 0 30px;
+	}
+
+	.entry-meta,
+	.entry-comments,
+	p {
+		font-size: 13px;
+	}
+}
