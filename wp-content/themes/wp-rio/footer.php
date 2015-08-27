@@ -20,7 +20,7 @@
 	    	?>
 	    	<ul class="social-medias">
 	    		<?php while ( have_rows( 'social-icons', 'options' ) ) : the_row(); ?>
-				<li><a href="<?php the_sub_field( 'link-icon', 'options' ); ?>"><?php the_sub_field( 'icon-class-footer', 'options' ); ?></a></li>
+				<li><a href="<?php the_sub_field( 'link-icon', 'options' ); ?>" target="_blank" rel="external"><?php the_sub_field( 'icon-class-footer', 'options' ); ?></a></li>
 				<?php endwhile; ?>
 			</ul><!-- .social-medias -->
 			<?php endif; ?>
