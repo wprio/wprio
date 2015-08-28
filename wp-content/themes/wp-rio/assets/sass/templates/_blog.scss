@@ -60,11 +60,17 @@
 		text-align: center;
 		line-height: 30px;
 		border-radius: 3px;
-		background-color: #f7941d;
-		color: #fff;
+		background-color: $primary-color;
+		color: $white;
+		@include transition(color .3s);
+
+		&:hover {
+			background-color: $base-color;
+		}
+
 
 		a {
-			color: #fff;	
+			color: $white;
 		}
 	}
 }
