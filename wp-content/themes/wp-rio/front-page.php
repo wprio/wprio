@@ -64,7 +64,8 @@
 				</div>
 
 				<?php
-					$slides = get_field( 'objeto-evento-passado', 'options' ); 
+					$slides = get_field( 'slides-home', 'options' ); 
+
 					if ( $slides && get_field( 'exibir-slides', 'options' ) ) :
 				?>
 				<div class="slides">
@@ -72,7 +73,7 @@
 
 					<div class="row">
 						<?php foreach ( $slides as $post ) : setup_postdata( $post ); ?>
-						<a href="<?php the_field( 'link-slide' ); ?>">
+						<a href="<?php the_field( 'link-slide' ); ?>" targer="_blank" rel="external">
 						<div class="slide">
 							<?php if ( has_post_thumbnail() ) : ?>
 							<figure class="slide-image">
@@ -114,12 +115,15 @@
 		</section><!-- .partners -->
 		<?php endif; ?>
 
-		<?php if ( have_posts() ) : ?>
+		<?php 
+			$articles = new WP_Query(["post_type" => "post", "posts_per_page" => 3]);
+			if ( $articles->have_posts() ) : 
+		?>
 		<section class="blog-area">
 			<h2>Direto do blog</h2>
 
 			<div class="row">
-				<?php while( have_posts() ) : the_post(); ?>
+				<?php while( $articles->have_posts() ) : $articles->the_post(); ?>
 				<article class="blog-entry">
 					<?php if ( has_post_thumbnail() ) : ?>
 					<figure class="blog-entry-image">

@@ -8,40 +8,48 @@ get_header(); ?>
 				while ( have_posts() ) : the_post();
 					get_template_part( 'content', 'page' );
 				endwhile;
+				//wp_reset_postdata();
 			?>
 			<?php 
-				global $wpdb;
-				$query = "SELECT ID, user_nicename from $wpdb->users ORDER BY user_nicename";
-				$author_ids = $wpdb->get_results($query);
-				if ( $author_ids ):
+				
+				if ( have_rows('equipe') ):
 			?>
 					<hr />
 					<section class="players">
 						<h2>Escala&ccedil;&atilde;o do time WP-Rio</h2>
 						<?php
-							
-							foreach($author_ids as $author) :
-								
-								$curauth = get_userdata($author->ID);
-								
-								if($curauth->user_level > 0 || $curauth->user_login == 'admin') :
-									$user_link = get_author_posts_url($curauth->ID);
-									$avatar = 'wavatar';
-
+							while( have_rows('equipe') ): the_row();
 						?>		<div class="row">
-
 									<div class="col-md-4">
-										<?php echo get_avatar($curauth->user_email, '224', $avatar); ?>
+										<?php 
+											$image_url = wp_get_attachment_image_src( get_sub_field('foto-perfil') );
+											echo "<img src='".$image_url[0]."' title='".get_sub_field('nome-pessoa')."' alt='".get_sub_field('nome-pessoa')."' />";
+										?>
 									</div>
 									<div class="col-md-8">
-										<h3 class="post-title"><?php echo $curauth->display_name; ?></h3>
+										<h3 class="post-title">
+											<?php the_sub_field('nome-pessoa'); ?>
+										</h3>
 
-										<p><?php echo $curauth->description; ?></p>
+										<p>
+											<?php the_sub_field('descricao'); ?>
+										</p>
+										<?php 
+											if( have_rows('ícones-sociais') ): ?>
+												<ul>
+												<?php 
+													while( have_rows('ícones-sociais') ): the_row(); ?>
+													<li><a href="<?php the_sub_field( 'link-rede' ); ?>" target="_blank" rel="external"><?php the_sub_field( 'classe-icone' ); ?></a></li>
+												<?php 
+													endwhile; 
+												?>
+												</ul>
+											<?php endif; //if( get_sub_field('items') ): ?>
 									</div>
 								</div>
 						<?php
-								endif;
-							endforeach;
+								
+							endwhile;
 						?>
 					</section>
 			<?php
