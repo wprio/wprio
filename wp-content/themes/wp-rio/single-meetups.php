@@ -25,7 +25,7 @@ get_header(); ?>
 
 					if ($slides):
 						echo "<hr />";
-						echo "<section=\"events\"><h2>Acesse todos os slides desse Meetup</h2>";
+						echo "<section class=\"events\"><h2>Acesse todos os slides desse Meetup</h2>";
 						foreach( $slides as $slide ):
 							echo "<div class='col-md-4'>";
 								if ( has_post_thumbnail() ) {
