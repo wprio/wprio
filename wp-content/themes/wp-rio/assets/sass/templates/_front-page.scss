@@ -24,11 +24,18 @@
 				h2 {
 					font-size: 18px;
 					text-transform: none;
+					margin-bottom: 25px;
+    				margin-top: 10px;
+				}
+
+				p {
+					margin-bottom: 30px;
 				}
 
 				.btn-banner {
 					text-transform: uppercase;
 					font-weight: 500;
+					padding: 20px 40px;
 
 					&:after {
 						@extend .glyphicon;
