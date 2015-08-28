@@ -39,7 +39,7 @@ get_header(); ?>
 												<ul>
 												<?php 
 													while( have_rows('ícones-sociais') ): the_row(); ?>
-													<li><a href="<?php the_sub_field( 'link-icon', 'options' ); ?>" target="_blank" rel="external"><?php the_sub_field( 'icon-class-footer', 'options' ); ?></a></li>
+													<li><a href="<?php the_sub_field( 'link-rede' ); ?>" target="_blank" rel="external"><?php the_sub_field( 'classe-icone' ); ?></a></li>
 												<?php 
 													endwhile; 
 												?>
