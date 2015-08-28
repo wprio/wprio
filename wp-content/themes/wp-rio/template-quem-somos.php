@@ -21,7 +21,10 @@ get_header(); ?>
 							while( have_rows('equipe') ): the_row();
 						?>		<div class="row">
 									<div class="col-md-4">
-										<?php the_sub_field('foto-perfil'); ?>
+										<?php 
+											$large_image_url = wp_get_attachment_image_src( get_sub_field('foto-perfil'), 'large' );
+											echo "<img src='".$large_image_url[0]."' title='".get_sub_field('nome-pessoa')."' alt='".get_sub_field('nome-pessoa')."' />";
+										?>
 									</div>
 									<div class="col-md-8">
 										<h3 class="post-title">
