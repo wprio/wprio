@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 	<div class="container">
-		<?php if( get_field('boolean-blog')) {
+		<?php if( get_field('boolean-blog','options')) {
 		echo '<header class="blog-header">';
-			$titulo = get_field('titulo-blog');
+			$titulo = get_field('titulo-blog','options');
 			if (!empty($titulo)){
 				echo '<h1>' . $titulo . '</h1>';
 			}
-			$texto = get_field('descricao-blog');
+			$texto = get_field('descricao-blog','options');
 			if (!empty($texto)){
 				echo $texto;
 			}
