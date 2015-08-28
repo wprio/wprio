@@ -2,7 +2,7 @@
 	<div class="container">
 		<?php if( get_field('boolean-blog')) {
 		echo '<header class="blog-header">';
-			<?php $titulo = get_field('titulo-blog');
+			$titulo = get_field('titulo-blog');
 			if (!empty($titulo)){
 				echo '<h1>' . $titulo . '</h1>';
 			}
