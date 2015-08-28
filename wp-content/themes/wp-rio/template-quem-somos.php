@@ -36,7 +36,7 @@ get_header(); ?>
 										</p>
 										<?php 
 											if( have_rows('ícones-sociais') ): ?>
-												<ul>
+												<ul class="equipe-social">
 												<?php 
 													while( have_rows('ícones-sociais') ): the_row(); ?>
 													<li><a href="<?php the_sub_field( 'link-rede' ); ?>" target="_blank" rel="external"><?php the_sub_field( 'classe-icone' ); ?></a></li>

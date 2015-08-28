@@ -99,8 +99,12 @@ h2 {
 
 .context-banner {
 	height: 110px;
-	margin: 68px 0 100px;
+	margin: 68px 0 50px;
 	border-bottom: 4px solid $primary-color;
+}
+
+#content {
+	padding-bottom: 70px;
 }
 
 .meetups .context-banner {
