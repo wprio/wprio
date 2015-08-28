@@ -11,31 +11,42 @@ get_header(); ?>
 				//wp_reset_postdata();
 			?>
 			<?php 
-				$team = get_field('equipe', $post->ID);
-				if ( $team ):
+				
+				if ( have_rows('equipe') ):
 			?>
 					<hr />
 					<section class="players">
 						<h2>Escala&ccedil;&atilde;o do time WP-Rio</h2>
 						<?php
-							foreach ( $team as $post ) : setup_postdata( $post );
+							while( have_rows('equipe') ): the_row();
 						?>		<div class="row">
 									<div class="col-md-4">
-										<?php echo get_field($post->ID, 'foto-perfil'); ?>
+										<?php the_sub_field('foto-perfil'); ?>
 									</div>
 									<div class="col-md-8">
 										<h3 class="post-title">
-											<?php echo get_field($post->ID, 'nome-pessoa'); ?>
+											<?php the_sub_field('nome-pessoa'); ?>
 										</h3>
 
 										<p>
-											<?php echo get_field($post->ID, 'descricao'); ?>
+											<?php the_sub_field('descricao'); ?>
 										</p>
+										<?php 
+											if( have_rows('ícones-sociais') ): ?>
+												<ul>
+												<?php 
+													while( have_rows('ícones-sociais') ): the_row(); ?>
+													<li><a href="<?php the_sub_field( 'link-icon', 'options' ); ?>" target="_blank" rel="external"><?php the_sub_field( 'icon-class-footer', 'options' ); ?></a></li>
+												<?php 
+													endwhile; 
+												?>
+												</ul>
+											<?php endif; //if( get_sub_field('items') ): ?>
 									</div>
 								</div>
 						<?php
 								
-							endforeach;
+							endwhile;
 						?>
 					</section>
 			<?php
