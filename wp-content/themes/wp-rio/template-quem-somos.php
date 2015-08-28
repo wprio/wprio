@@ -22,8 +22,8 @@ get_header(); ?>
 						?>		<div class="row">
 									<div class="col-md-4">
 										<?php 
-											$large_image_url = wp_get_attachment_image_src( get_sub_field('foto-perfil'), 'large' );
-											echo "<img src='".$large_image_url[0]."' title='".get_sub_field('nome-pessoa')."' alt='".get_sub_field('nome-pessoa')."' />";
+											$image_url = wp_get_attachment_image_src( get_sub_field('foto-perfil') );
+											echo "<img src='".$image_url[0]."' title='".get_sub_field('nome-pessoa')."' alt='".get_sub_field('nome-pessoa')."' />";
 										?>
 									</div>
 									<div class="col-md-8">
