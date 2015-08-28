@@ -30,7 +30,7 @@ get_header(); ?>
 
 					if ($slides):
 						echo "<hr />";
-						echo "<h2>Acesse todos os slides desse WordCamp</h2>";
+						echo "<section class=\"events\"><h2>Acesse todos os slides desse WordCamp</h2>";
 						foreach( $slides as $slide ):
 							echo "<div class='col-md-4'>";
 								if ( has_post_thumbnail() ) {
@@ -39,7 +39,7 @@ get_header(); ?>
 								}
 								$link_slide = get_field('link-slide', $slide->ID);
 								echo "<h3><a href='".$link_slide."' target='_blank'>".get_the_title($slide->ID)."</a></h3>";
-							echo "</div>";
+							echo "</div></section>";
 						endforeach;
 					endif;
 					
