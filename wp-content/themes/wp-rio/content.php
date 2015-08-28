@@ -24,6 +24,12 @@
 				<?php odin_posted_on(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
+
+		<?php if ( has_post_thumbnail() ) : ?>
+			<figure class="entry-image">
+				<?php the_post_thumbnail( 'entry-large' ); ?>
+			</figure>
+		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<?php if ( is_search() ) : ?>
