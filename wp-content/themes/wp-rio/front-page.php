@@ -64,7 +64,8 @@
 				</div>
 
 				<?php
-					$slides = get_field( 'objeto-evento-passado', 'options' ); 
+					$slides = get_field( 'slides-home', 'options' ); 
+
 					if ( $slides && get_field( 'exibir-slides', 'options' ) ) :
 				?>
 				<div class="slides">
@@ -72,7 +73,7 @@
 
 					<div class="row">
 						<?php foreach ( $slides as $post ) : setup_postdata( $post ); ?>
-						<a href="<?php the_field( 'link-slide' ); ?>">
+						<a href="<?php the_field( 'link-slide' ); ?>" targer="_blank" rel="external">
 						<div class="slide">
 							<?php if ( has_post_thumbnail() ) : ?>
 							<figure class="slide-image">
