@@ -99,7 +99,7 @@ h2 {
 
 .context-banner {
 	height: 110px;
-	margin-top: 68px;
+	margin: 68px 0 100px;
 	border-bottom: 4px solid $primary-color;
 }
 
@@ -123,10 +123,14 @@ h2 {
 	background-image: url('../images/banners/context.jpg');
 }
 
+#comments {
+	margin: 80px 0 50px;
+}
+
 .main-footer {
+	height: 300px;
 	font-size: 12px;
 	line-height: 1.16em;
-	height: 300px;
 	padding-top: 25px;
 	color: $white;
 	border-top: 4px solid $primary-color;
