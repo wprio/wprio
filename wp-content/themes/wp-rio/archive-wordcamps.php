@@ -1,7 +1,16 @@
 <?php
 /**
- * Template Name: Template WordCamps
- * The Template for displaying all wordcamps
+ * The template for displaying WordCamp CPT Archive pages.
+ *
+ * Used to display archive-type pages if nothing more specific matches a query.
+ * For example, puts together date-based pages if no date.php file exists.
+ *
+ * If you'd like to further customize these archive views, you may create a
+ * new template file for each specific one. For example, Twenty Thirteen
+ * already has tag.php for Tag archives, category.php for Category archives,
+ * and author.php for Author archives.
+ *
+ * @link http://codex.wordpress.org/Template_Hierarchy
  *
  * @package Odin
  * @since 2.2.0
@@ -9,29 +18,23 @@
 
 get_header(); ?>
 
-	<section class="full-banner">
-		<?php if ( has_post_thumbnail() ) : ?>
-		
-		<?php endif; ?>
-	</section><!-- .header-caption -->
-
 	<div class="container wordcamps internal">	
 		<main id="main-content" class="site-main" role="main">
 			<?php
-				while ( have_posts() ) : the_post();
-					get_template_part( 'content', 'page' );
-				endwhile;
+				// while ( have_posts() ) : the_post();
+				// 	get_template_part( 'content', 'page' );
+				// endwhile;
 			?>
 			<?php 
-				$wordcamps = new WP_Query(['post_type' => 'wordcamps']);
-				if ( $wordcamps->have_posts() ):
+				
+				if ( have_posts() ):
 			?>
 					<hr />
 					<section class="events">
 						<h2>ÚLTIMOS EDIÇÕES DO WORDCAMP CARIOCA</h2>
 						<?php
 							
-							while ( $wordcamps->have_posts() ) : $wordcamps->the_post();
+							while ( have_posts() ) : the_post();
 						?>
 							<div class="col-md-4">
 							<?php 
