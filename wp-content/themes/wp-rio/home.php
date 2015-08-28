@@ -1,14 +1,21 @@
 <?php get_header(); ?>
 	<div class="container">
-		<header class="blog-header">
-			<h1>Blog da comunidade carioca de WordPress</h1>
-			<p>Blog para falar das novidades do CMS mais lindão do mundo e tudo o que rola sobre a Comunidade da Cidade Maravilhosa que sabe tudo e mais um pouco de WordPress.<strong>Assine o nosso blog e fique por dentro de todos os eventos da comunidade WP-Rio.</strong></p>
-		</header><!-- .blog-header -->
-		
+		<?php if( get_field('boolean-blog')) {
+		echo '<header class="blog-header">';
+			<?php $titulo = get_field('titulo-blog');
+			if (!empty($titulo)){
+				echo '<h1>' . $titulo . '</h1>';
+			}
+			$texto = get_field('descricao-blog');
+			if (!empty($texto)){
+				echo $texto;
+			}
+		echo '</header>';
+		} ?>
 		<section class="blog-entries">
 			<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
 				<article class="entry">
-					<h2 class="entry-title"><?php the_title(); ?></h2>
+					<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 					<span class="entry-meta">
 						Publicado por <?php the_author(); ?>
 						em <?php the_date(); ?> na categoria <?php the_category(', '); ?>
