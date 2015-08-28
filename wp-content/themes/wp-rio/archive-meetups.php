@@ -35,7 +35,7 @@ get_header(); ?>
 			?>
 					<hr />
 					<section class="events">
-						<h2>ÚLTIMOS EDIÇÕES DO MEETUP CARIOCA</h2>
+						<h2>ÚLTIMAS EDIÇÕES DO MEETUP CARIOCA</h2>
 						<?php
 							
 							while ( have_posts() ) : the_post();
@@ -49,7 +49,7 @@ get_header(); ?>
 								}
 							?>	
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-							</div>
+							</div> 		
 
 						<?php
 							endwhile;
