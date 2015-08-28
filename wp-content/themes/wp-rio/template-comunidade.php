@@ -9,12 +9,6 @@
 
 get_header(); ?>
 
-	<section class="full-banner">
-		<?php if ( has_post_thumbnail() ) : ?>
-		
-		<?php endif; ?>
-	</section><!-- .header-caption -->
-
 	<div class="container internal">	
 		<main id="main-content" class="site-main" role="main">
 			<?php
