@@ -22,7 +22,7 @@ get_header(); ?>
 						?>		<div class="row">
 									<div class="col-md-4">
 										<?php 
-											$image_url = wp_get_attachment_image_src( get_sub_field('foto-perfil') );
+											$image_url = wp_get_attachment_image_src( get_sub_field('foto-perfil'), 'full' );
 											echo "<img src='".$image_url[0]."' title='".get_sub_field('nome-pessoa')."' alt='".get_sub_field('nome-pessoa')."' />";
 										?>
 									</div>
