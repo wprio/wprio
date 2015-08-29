@@ -9,6 +9,10 @@ h2 {
 	text-transform: uppercase;
 }
 
+img {
+	max-width: 100%;
+}
+
 .btn {
 	&:after {
 		@extend .glyphicon;
