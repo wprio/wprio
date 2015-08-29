@@ -29,6 +29,12 @@
         <a id="logo" href="<?php echo home_url( '/' ); ?>" title="Ir para Home">
             <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="Logo WP Rio">
         </a>
+        <button type="button" class="menu-toggle navbar-toggle collapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
         <?php
             if ( has_nav_menu( 'main-menu' ) ) :
                 $defaults = array(

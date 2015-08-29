@@ -44,6 +44,9 @@ img {
 	&.active #logo {
 		width: 100px;
 		margin-left: -50px;
+		@media (min-width: $screen-md-min) {
+			margin-left: 0;
+		}
 	}
 
 	#logo {
@@ -63,12 +66,35 @@ img {
 			max-width: 100%;
 		}
 	}
+
+	.menu-toggle {
+		@extend .glyphicon;
+		@extend .glyphicon-menu-hamburger;
+		float: right;
+		height: 35px;
+		overflow: hidden;
+		color: $base-color;
+
+		&:after {
+			content: '';
+			display: none;
+		}
+
+		@media (min-width: $screen-sm-min) {
+			display: none;
+		}
+	}
 	
 	.menu {
-		@extend .container;
+		display: none;
 		list-style-type: none;
 		height: 100%;
 		margin-bottom: 0;
+		@extend .container;
+
+		@media (min-width: $screen-sm-min) {
+			display: block;
+		}
 
 		&:after {
 			@include clearfix;
