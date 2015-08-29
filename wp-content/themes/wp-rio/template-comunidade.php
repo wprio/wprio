@@ -37,10 +37,10 @@ get_header(); ?>
 
 						?>		<div class="row">
 
-									<div class="col-md-4">
+									<div class="col-sm-4">
 										<?php echo get_avatar($curauth->user_email, '224', $avatar); ?>
 									</div>
-									<div class="col-md-8">
+									<div class="col-sm-8">
 										<h3 class="post-title"><?php echo $curauth->display_name; ?></h3>
 
 										<p><?php echo $curauth->description; ?></p>

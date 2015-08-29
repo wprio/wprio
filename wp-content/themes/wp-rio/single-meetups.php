@@ -27,15 +27,16 @@ get_header(); ?>
 						echo "<hr />";
 						echo "<section class=\"events\"><h2>Acesse todos os slides desse Meetup</h2>";
 						foreach( $slides as $slide ):
-							echo "<div class='col-md-4'>";
+							echo "<div class='col-sm-4'>";
 								if ( has_post_thumbnail() ) {
 									echo get_the_post_thumbnail($slide->ID, 'partners-thumb');
 									
 								}
 								$link_slide = get_field('link-slide', $slide->ID);
 								echo "<h3><a href='".$link_slide."' target='_blank'>".get_the_title($slide->ID)."</a></h3>";
-							echo "</div></section>";
+							echo "</div>";
 						endforeach;
+						echo "</section>";
 					endif;
 					
 				

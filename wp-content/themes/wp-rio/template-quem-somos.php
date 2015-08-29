@@ -20,13 +20,13 @@ get_header(); ?>
 						<?php
 							while( have_rows('equipe') ): the_row();
 						?>		<div class="row">
-									<div class="col-md-4">
+									<div class="col-sm-4">
 										<?php 
 											$image_url = wp_get_attachment_image_src( get_sub_field('foto-perfil'), 'full' );
 											echo "<img src='".$image_url[0]."' title='".get_sub_field('nome-pessoa')."' alt='".get_sub_field('nome-pessoa')."' />";
 										?>
 									</div>
-									<div class="col-md-8">
+									<div class="col-sm-8">
 										<h3 class="post-title">
 											<?php the_sub_field('nome-pessoa'); ?>
 										</h3>

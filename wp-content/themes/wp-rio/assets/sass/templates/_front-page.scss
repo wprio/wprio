@@ -73,7 +73,7 @@
 
 .event-image,
 .meetup-image {
-	@include make-md-column(4);
+	@include make-sm-column(4);
 }
 
 .event-title,
@@ -83,7 +83,7 @@
 
 .event-content,
 .meetup-content {
-	@include make-md-column(8);
+	@include make-sm-column(8);
 	position: relative;
 	min-height: 220px;
 
@@ -104,7 +104,7 @@
 	}
 
 	.slide {
-		@include make-md-column(4);
+		@include make-sm-column(4);
 
 		.slide-title {
 			font-size: 16px;
@@ -129,6 +129,6 @@
 	}
 
 	.blog-entry {
-		@include make-md-column(4);
+		@include make-sm-column(4);
 	}
 }

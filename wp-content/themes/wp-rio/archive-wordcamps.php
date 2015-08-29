@@ -40,7 +40,7 @@ get_header(); ?>
 							
 							while ( have_posts() ) : the_post();
 						?>
-							<div class="col-md-4">
+							<div class="col-sm-4">
 							<?php 
 								if ( has_post_thumbnail() ) {
 									echo '<a href="'.get_the_permalink().'">';
