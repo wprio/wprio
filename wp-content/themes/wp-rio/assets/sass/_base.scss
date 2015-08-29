@@ -49,10 +49,15 @@ img {
 	#logo {
 		position: absolute;
 		display: block;
-		width: 200px;
-		left: 50%;
-		margin-left: -100px;
+		width: 100px;
+		left: 30px;
 		@include transition(all .3s);
+
+		@media (min-width: $screen-md-min) {
+			width: 200px;
+			left: 50%;
+			margin-left: -100px;
+		}
 
 		img {
 			max-width: 100%;
@@ -72,9 +77,11 @@ img {
 		.menu-item {
 			float: left;
 			height: inherit;
-
-			&:nth-child(n+4) {
-				float: right;
+			
+			@media (min-width: $screen-md-min) {
+				&:nth-child(n+4) {
+					float: right;
+				}
 			}
 			
 			a {
