@@ -43,9 +43,9 @@ img {
 
 	&.active #logo {
 		width: 100px;
-		margin-left: -50px;
+		margin-left: 0;
 		@media (min-width: $screen-md-min) {
-			margin-left: 0;
+			margin-left: -50px;
 		}
 	}
 
