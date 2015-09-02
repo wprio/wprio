@@ -12,7 +12,6 @@
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
     <meta charset="UTF-8">
-    <title><?php wp_title(); ?></title>
     <?php wp_head(); ?>
     <meta name="google-site-verification" content="9Ms0xe7SDf46KRJFPVCpyZpXu_MBKedoBR8Quf1bPzc" />
     <script>
