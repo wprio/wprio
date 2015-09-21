@@ -2463,3 +2463,17 @@ acf_add_local_field_group(array (
 }
 
 define( 'ACF_LITE' , false );
+
+
+function certificate_shortcode( $atts ) {
+	return '
+	<form action="'. get_template_directory_uri() .'/inc/certificate/certificate.php" method="get">
+		<p>
+			<label for="certificate-email">Digite seu e-mail:</label><br />
+			<input id="certificate-email" type="email" placeholder="seuemail@email.com" name="email">
+		</p>
+		<p><button class="btn-primary" type="submit">Gerar meu certificado!</button></p>
+	</form>
+	';
+}
+add_shortcode( 'certificate', 'certificate_shortcode' );
