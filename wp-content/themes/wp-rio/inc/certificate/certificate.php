@@ -17,6 +17,7 @@
 <?php
 	require_once 'lib/excel_reader2.php';
 	$excel = new Spreadsheet_Excel_Reader('docs/participantes.xls');
+	$certificate = array();
 
 	$count = $excel->rowcount();
 	for ( $i = 0; $i < $count + 1; $i++ ) {
@@ -26,21 +27,39 @@
 			$first_name = $excel->val( $i, 1 );
 			$last_name	= $excel->val( $i, 2 );
 
-			$certificate_name = utf8_encode( $first_name . ' ' . $last_name );
+			$certificate['name'] = utf8_encode( $first_name . ' ' . $last_name );
+			$certificate['type'] = $excel->val( $i, 4 );
 			break;
 		}
 	}
 ?>
-	<?php if ( isset( $certificate_name ) ) : ?>
+	<?php if ( isset( $certificate['name'] ) ) : ?>
 	<div class="certificate">
 		<div class="certificate-label">
 			<span class="certificate-pre">Certificamos que</span>
-			<span class="certificate-name"><?php echo $certificate_name; ?></span>
+			<span class="certificate-name"><?php echo $certificate['name']; ?></span>
+			<?php switch ( $certificate['type'] ) : case 'palestrante' : ?>
 			<span class="certificate-description">
-				participou do evento “WordCamp Rio de Janeiro 2015”,<br />
-				no dia 29 de agosto de 2015, na cidade do Rio de Janeiro,<br />
-				na qualidade de participante, com carga horária de 10 horas.
+				participou do evento "WordCamp Rio de Janeiro 2015",
+				no dia 29 de agosto de 2015, na cidade do Rio de Janeiro,
+				na qualidade de <strong>palestrante</strong>.
 			</span>
+			<?php break; ?>
+			<?php case 'voluntario' : ?>
+			<span class="certificate-description">
+				participou do evento "WordCamp Rio de Janeiro 2015",
+				no dia 29 de agosto de 2015, na cidade do Rio de Janeiro,
+				na qualidade de <strong>voluntário</strong>, com carga horária de 10 horas
+			</span>
+			<?php break; ?>
+			<?php default: ?>
+			<span class="certificate-description">
+				participou do evento "WordCamp Rio de Janeiro 2015",<br />
+				no dia 29 de agosto de 2015, na cidade do Rio de Janeiro,<br />
+				na qualidade de <strong>participante</strong>, com carga horária de 10 horas.
+			</span>
+			<?php break; ?>
+			<?php endswitch; ?>
 			<span class="certificate-date">
 				<?php 
 					$date = getdate();
