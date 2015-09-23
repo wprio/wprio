@@ -8,7 +8,7 @@ body {
 .certificate {
 	width: 1024px;
 	height: 768px;
-	background: url('../img/certificado-bg.jpg') no-repeat center center;
+	background: url('../img/certificado-bg.jpg') center center;
 	margin: 20px auto 0;
 }
 
