@@ -4,7 +4,7 @@ Plugin Name: Wp Mail Bank
 Plugin URI: http://tech-banker.com
 Description: WP Mail Bank reconfigures the wp_mail() function and make it more enhanced.
 Author: Tech Banker
-Version: 1.26
+Version: 1.28
 Author URI: http://tech-banker.com
 License: GPLv3 or later
 */
@@ -69,6 +69,15 @@ function wp_mail_bank_configure($phpmailer)
 	$phpmailer->From = $data->from_email;
 	$phpmailer->Sender =  $data->return_path == 0 ? $data->return_email : $data->from_email;
 	$phpmailer->WordWrap = $data->word_wrap;
+	$phpmailer->SMTPOptions = array
+				(
+					'ssl' => array
+					(
+						'verify_peer' => false,
+						'verify_peer_name' => false,
+						'allow_self_signed' => true
+					)
+				);
 	if($data->mailer_type == 0)
 	{	
 		switch($data->encryption)
