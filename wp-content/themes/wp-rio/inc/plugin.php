@@ -2466,8 +2466,11 @@ define( 'ACF_LITE' , false );
 
 
 function certificate_shortcode( $atts ) {
+	/**
+	 * @todo? Receber o slug da página destino via parâmetro atributo do shortcode
+	 */
 	return '
-	<form action="'. get_template_directory_uri() .'/inc/certificate/certificate.php" method="get">
+	<form action="'. site_url( '/seu-certificado/' ) .'" method="get">
 		<p>
 			<label for="certificate-email">Digite seu e-mail:</label><br />
 			<input id="certificate-email" type="email" placeholder="seuemail@email.com" name="email">
