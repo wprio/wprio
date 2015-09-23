@@ -1129,7 +1129,7 @@ msgctxt "Plugin Installer"
 msgid "Recommended"
 msgstr "Recomendado"
 
-#: wp-admin/includes/upgrade.php:364
+#: wp-admin/includes/upgrade.php:365
 msgid ""
 "Your new WordPress site has been successfully set up at:\n"
 "\n"
@@ -2513,6 +2513,10 @@ msgstr "Adicione itens de menu da coluna à esquerda."
 msgid "Plugins extend and expand the functionality of WordPress. You may automatically install plugins from the <a href=\"%1$s\">WordPress Plugin Directory</a> or upload a plugin in .zip format via <a href=\"%2$s\">this page</a>."
 msgstr "Plugins estendem e expandem a funcionalidade do WordPress. Você pode instalar automaticamente plugins do <a href=\"%1$s\">Diretório WordPress de  Plugin </a> ou fazer upload de um plugin no formato .zip através <a href=\"%2$s\">desta página </a>"
 
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/plugins/hello-dolly/"
+msgstr "http://wordpress.org/plugins/hello-dolly/"
+
 #: wp-admin/includes/class-wp-upgrader.php:131
 msgid "The package contains no files."
 msgstr "O pacote não contém arquivos."
@@ -3645,6 +3649,22 @@ msgstr[1] "<span class=\"count\">(%s)</span> quebrados"
 msgid "Light"
 msgstr "Claro"
 
+#. Plugin Name of the plugin/theme
+msgid "Hello Dolly"
+msgstr "Hello Dolly"
+
+#. Description of the plugin/theme
+msgid "This is not just a plugin, it symbolizes the hope and enthusiasm of an entire generation summed up in two words sung most famously by Louis Armstrong: Hello, Dolly. When activated you will randomly see a lyric from <cite>Hello, Dolly</cite> in the upper right of your admin screen on every page."
+msgstr "Isto não é só um plugin, é algo que simboliza a esperança e o entusiamo de uma geração inteira resumida em duas palavras cantadas por Louis Armstrong: Hello, Dolly. Quando ativar este plugin, você verá trechos aleatórios da letra da canção <cite>Hello, Dolly</cite> do lado direito de cada tela de adminstração."
+
+#. Author of the plugin/theme
+msgid "Matt Mullenweg"
+msgstr "Matt Mullenweg"
+
+#. Author URI of the plugin/theme
+msgid "http://ma.tt/"
+msgstr "http://ma.tt/"
+
 #: wp-admin/includes/screen.php:1066
 msgid "Show on screen"
 msgstr "Mostrar na tela"
@@ -4147,12 +4167,12 @@ msgstr "Mostrar a Barra de Ferramentas ao ver site"
 msgid "Contributing Developers"
 msgstr "Desenvolvedores que também contribuem"
 
-#: wp-admin/about.php:208
+#: wp-admin/about.php:114 wp-admin/about.php:216
 msgid "For more information, see <a href=\"%s\">the release notes</a>."
 msgstr "Para mais informações, veja <a href=\"%s\">as notas de lançamento</a>."
 
 #. translators: 1: WordPress version number, 2: plural number of bugs.
-#: wp-admin/about.php:197
+#: wp-admin/about.php:205
 msgid "<strong>Version %1$s</strong> addressed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed %2$s bugs."
 msgstr[0] "A <strong>versão %1$s</strong> corrigiu %2$s bug."
@@ -4160,7 +4180,7 @@ msgstr[1] "A <strong>versão %1$s</strong> corrigiu %2$s bugs."
 
 #. translators: 1: WordPress version number, 2: plural number of bugs. Singular
 #. security issue.
-#: wp-admin/about.php:201
+#: wp-admin/about.php:209
 msgid "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs."
 msgstr[0] "A <strong>versão %1$s</strong> corrigiu um problema de segurança e %2$s bug."
@@ -4168,7 +4188,7 @@ msgstr[1] "A <strong>versão %1$s</strong> corrigiu um problema de segurança e 
 
 #. translators: 1: WordPress version number, 2: plural number of bugs. More
 #. than one security issue.
-#: wp-admin/about.php:205
+#: wp-admin/about.php:112 wp-admin/about.php:213
 msgid "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs."
 msgstr[0] "A <strong>versão %1$s</strong> corrigiu alguns problemas de segurança e %2$s bug."
@@ -4182,26 +4202,26 @@ msgstr "Bem vindo ao Painel do seu WordPress! Esta é a tela que você vai ver a
 msgid "What&#8217;s New"
 msgstr "O que há de novo"
 
-#: wp-admin/about.php:188
+#: wp-admin/about.php:196
 msgid "Maintenance Release"
 msgid_plural "Maintenance Releases"
 msgstr[0] "Release de Manutenção"
 msgstr[1] "Releases de Manutenção"
 
-#: wp-admin/about.php:189
+#: wp-admin/about.php:197
 msgid "Security Release"
 msgid_plural "Security Releases"
 msgstr[0] "Release de Segurança"
 msgstr[1] "Releases de Segurança"
 
-#: wp-admin/about.php:190
+#: wp-admin/about.php:111 wp-admin/about.php:198
 msgid "Maintenance and Security Release"
 msgid_plural "Maintenance and Security Releases"
 msgstr[0] "Release de Segurança e Manutenção"
 msgstr[1] "Releases de Segurança e Manutenção"
 
 #. translators: 1: WordPress version number.
-#: wp-admin/about.php:193
+#: wp-admin/about.php:201
 msgid "<strong>Version %1$s</strong> addressed a security issue."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues."
 msgstr[0] "A <strong>versão %1$s</strong> corrigiu um problema de segurança."
@@ -4215,7 +4235,7 @@ msgstr "Esta tela permite que escolha as estrutura padrão para seu links perman
 msgid "Welcome to WordPress %1$s. <a href=\"%2$s\">Learn more</a>."
 msgstr "Bem-vindo ao WordPress%1$s. <a href=\"%2$s\">Saiba mais</a>."
 
-#: wp-admin/about.php:173
+#: wp-admin/about.php:181
 msgid "Return to Updates"
 msgstr "Voltar às Atualizações"
 
@@ -4511,11 +4531,11 @@ msgstr "Há inclusão direta em wp-admin/includes/template.php para usar add_met
 msgid "Welcome to WordPress %s"
 msgstr "Bem-vindo ao WordPress %s"
 
-#: wp-admin/about.php:173
+#: wp-admin/about.php:181
 msgid "Return to Dashboard &rarr; Updates"
 msgstr "Voltar ao Painel &rarr; Atualizações"
 
-#: wp-admin/about.php:176
+#: wp-admin/about.php:184
 msgid "Go to Dashboard &rarr; Home"
 msgstr "Ir para Painel &rarr; Início"
 
@@ -4527,7 +4547,7 @@ msgstr "O WordPress é criado por uma equipe mundial de pessoas apaixonadas."
 msgid "Core Developers"
 msgstr "Desenvolvedores do <i>Core</i> (parte principal do WordPress, excluindo temas e plugins)"
 
-#: wp-admin/about.php:159
+#: wp-admin/about.php:167
 msgid "Under the Hood"
 msgstr "Nos bastidores"
 
@@ -5283,12 +5303,12 @@ msgstr "Se você quer fazer alterações, mas não quer que elas sejam sobrescri
 msgid "Press This is a bookmarklet that makes it easy to blog about something you come across on the web. You can use it to just grab a link, or to post an excerpt. Press This will even allow you to choose from images included on the page and use them in your post. Just drag the Press This link on this screen to your bookmarks bar in your browser, and you&#8217;ll be on your way to easier content creation. Clicking on it while on another website opens a popup window with all these options."
 msgstr "O Publique Isso é um bookmarklet que facilita blogar sobre qualquer assunto com o qual você se deparar na web. Você pode usá-lo somente para copiar um link ou para publicar um resumo. O Publique Isso permite até que escolha imagens incluídas na página e as use em seu post. Apenas arraste o link Publique Isso desta tela para a barra de ferramentas de seu navegador e você está pronto para criar conteúdos ainda mais facilmente. Ao clicar nele, quando estiver em outro site, uma popup com todas essas opções se abrirá."
 
-#: wp-admin/includes/upgrade.php:225
+#: wp-admin/includes/upgrade.php:226
 msgid "Sample Page"
 msgstr "Página de Exemplo"
 
 #. translators: Default page slug
-#: wp-admin/includes/upgrade.php:227
+#: wp-admin/includes/upgrade.php:228
 msgid "sample-page"
 msgstr "pagina-exemplo"
 
@@ -6278,7 +6298,7 @@ msgstr "Sem permissão para criar páginas neste site."
 msgid "My Site"
 msgstr "Meu site"
 
-#: wp-admin/includes/upgrade.php:380
+#: wp-admin/includes/upgrade.php:381
 msgid "New WordPress Site"
 msgstr "Novo site WordPress"
 
@@ -6703,7 +6723,7 @@ msgid_plural "Must-Use <span class=\"count\">(%s)</span>"
 msgstr[0] "Indispensável <span class=\"count\">(%s)</span>"
 msgstr[1] "Indispensáveis<span class=\"count\">(%s)</span>"
 
-#: wp-admin/about.php:176
+#: wp-admin/about.php:184
 msgid "Go to Dashboard"
 msgstr "Ir para o painel"
 
