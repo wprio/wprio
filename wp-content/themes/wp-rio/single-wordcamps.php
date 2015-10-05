@@ -28,7 +28,7 @@ get_header(); ?>
 						echo "<section class=\"events\"><h2>Acesse todos os slides desse WordCamp</h2>";
 						foreach( $slides as $slide ):
 							echo "<div class='col-sm-4'>";
-								if ( has_post_thumbnail() ) {
+								if ( has_post_thumbnail( $slide->ID ) ) {
 									echo get_the_post_thumbnail($slide->ID, 'partners-thumb');
 									
 								}
