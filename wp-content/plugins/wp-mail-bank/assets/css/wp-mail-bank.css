@@ -1,0 +1,89 @@
+.close-report
+{
+	display: none;
+}
+.nav-tab-wrapper
+{
+	width: 1000px;
+}
+.rdl_mail_bank
+{
+	margin-top:7px;
+}
+.wp_layout_control_mail_bank
+{
+	margin-top: 7px;
+}
+.layout-system-report textarea {
+    font-family: monospace;
+    width: 100%;
+    margin: 0;
+    height: 300px;
+    padding: 20px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    resize: none;
+    font-size: 12px;
+    line-height: 20px;
+    outline: 0;
+}
+.layout-system-report {
+    display: none;
+    margin: 10px 0;
+    padding: 0;
+    position: relative;
+}
+.wpib-desc-italic{
+	font-size:11px;
+	font-style:italic;
+	font-family:  "Droid Sans",Helvetica,Arial,Verdana,sans-serif;
+	margin-bottom:2px !important;
+}
+.message_mail
+{
+	z-index: 9999;
+	
+}
+.custom-message {
+    position: relative;
+    display: inline-block;
+    margin: 20px 0 0 0;
+    padding: 0 0 0 35px;
+    -moz-box-shadow: 1px 1px 0 #e6e6e6;
+    -webkit-box-shadow: 1px 1px 0 #e6e6e6;
+    box-shadow: 1px 1px 0 #e6e6e6;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color='#e6e6e6')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color='#e6e6e6');
+    zoom: 1;
+}
+
+.custom-message:hover {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+}
+
+.custom-message span {
+    display: block;
+    /*background : url(../images/system-icon.png) no-repeat 98% center;*/
+    padding: 13px 0;
+    font: 12px/1.0em Arial;
+}
+
+.custom-message.inner {
+    margin: 0 0 20px;
+}
+
+.custom-message.red {
+    display: block;
+    background : #F8E9E9;
+    border: 1px solid #E4BBBC;
+    color: #b80000;
+}
+
+.custom-message.green {
+    display: block;
+    background: url(../images/icons/icon-succes.png) no-repeat 1px 8px #EBF9E2;
+    border: 1px solid #BEE4A5;
+    color: #6aa500;
+}
