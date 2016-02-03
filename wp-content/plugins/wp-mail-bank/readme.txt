@@ -2,8 +2,8 @@
 Contributors: contact-banker, Gallery-Bank
 Tags: admin, ajax, email, gmail, mail, mail smtp, mailer, outgoing mail, phpmailer, plugin, Post, posts, privacy, security, sendmail, smtp, ssl, tls, wordpress smtp, wp smtp, wp-phpmailer, wp_mail, wp mail, mailer
 Requires at least: 2.7
-Tested up to: 4.3
-Stable tag: 1.26
+Tested up to: 4.4.1
+Stable tag: 1.35
 
 WP Mail Bank reconfigures the PHP Mailer and make it more enhanced with advanced SMTP settings options.
 
@@ -221,6 +221,45 @@ If any problem occurs, please contact us at [support@tech-banker.com](mailto:sup
 4. Debugging Output Console Log
 
 == Changelog ==
+
+= 1.0.35 =
+
+* Compatibility with 4.4.1
+* Few Urgent Bugs Fixed
+
+= 1.0.34 =
+
+* Compatibility with 4.4
+* Few Urgent Bugs Fixed
+
+= 1.0.33 =
+
+* Few Urgent Bugs Fixed
+
+= 1.0.32 =
+
+* CSS Issue Fixed.
+
+= 1.0.31 =
+
+* Few Urgent Bugs Fixed
+
+= 1.0.30 =
+
+* Compatibility with 4.3.1
+* Few Urgent Bugs Fixed
+
+= 1.0.29 =
+
+* Few Urgent Bugs Fixed
+
+= 1.0.28 =
+
+* Php Mailer function updated.
+
+= 1.0.27 =
+
+* Few Urgent Bugs Fixed
 
 = 1.0.26 =
 

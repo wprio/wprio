@@ -3,7 +3,7 @@ Contributors: Viper007Bond
 Donate link: http://www.viper007bond.com/donate/
 Tags: thumbnail, thumbnails
 Requires at least: 2.8
-Tested up to: 3.9
+Tested up to: 4.4
 Stable tag: trunk
 
 Allows you to regenerate your thumbnails after changing the thumbnail sizes.
@@ -30,6 +30,14 @@ See the [screenshots tab](http://wordpress.org/extend/plugins/regenerate-thumbna
 2. You can resize specific multiples images using the checkboxes and the "Bulk Actions" dropdown
 
 == ChangeLog ==
+
+= Version 2.2.6 =
+
+* PHP 7 compatibility.
+
+= Version 2.2.5 =
+
+* Updates relating to plugin language pack support.
 
 = Version 2.2.4 =
 

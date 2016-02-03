@@ -2,7 +2,7 @@
 /*
 Plugin Name: Advanced Custom Fields: Font Awesome
 Description: Add a Font Awesome field type to Advanced Custom Fields
-Version: 1.7.1
+Version: 1.7.2
 Author: Matt Keys
 Author URI: http://mattkeys.me/
 License: GPLv2 or later

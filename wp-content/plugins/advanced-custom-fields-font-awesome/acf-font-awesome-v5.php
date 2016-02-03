@@ -121,8 +121,8 @@ class acf_field_font_awesome extends acf_field {
 	*  @return	n/a
 	*/
 	
-	function render_field_settings( $field ) {
-		
+	function render_field_settings( $field )
+	{
 		/*
 		*  acf_render_field_setting
 		*
@@ -202,9 +202,9 @@ class acf_field_font_awesome extends acf_field {
 	*  @return	n/a
 	*/
 	
-	function render_field( $field ) {
-		
-		if( 'object' == $field['save_format'] )
+	function render_field( $field )
+	{
+		if( 'object' == $field['save_format'] && 'null' !== $field['value'] )
 			$field['value'] = array( $field['value']->class );
 
 		// value must be array

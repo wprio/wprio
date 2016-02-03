@@ -1402,12 +1402,6 @@ legend + .layout-control-group
  text-decoration:none;
 }
  
-li.active a, li.active a:hover 
-{
- background:#fff;
- color:#4c4c4c;
-}
- 
 .framework_tab-content 
 {
  border-radius:3px;
