@@ -41,13 +41,14 @@ get_header(); ?>
 							while ( have_posts() ) : the_post();
 						?>
 							<div class="col-sm-4">
-							<?php 
-								if ( has_post_thumbnail() ) {
-									echo '<a href="'.get_the_permalink().'">';
-									the_post_thumbnail('partners-thumb');
-									echo '</a>';
-								}
-							?>	
+								<?php if( has_post_thumbnail() ) : ?>
+									<a href="<?php the_permalink(); ?>">	
+										<?php the_post_thumbnail( ('partners-thumb') ); ?>
+									</a>
+								<?php else: ?>
+									<img src="<?php bloginfo( 'template_url' ); ?>/assets/images/thumb-fallback-wprio-220X165.png">	
+								<?php endif; ?>
+
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 							</div>
 
