@@ -14,6 +14,7 @@
     <meta charset="UTF-8">
     <?php wp_head(); ?>
     <meta name="google-site-verification" content="9Ms0xe7SDf46KRJFPVCpyZpXu_MBKedoBR8Quf1bPzc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

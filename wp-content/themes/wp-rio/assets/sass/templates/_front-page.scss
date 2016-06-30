@@ -1,5 +1,6 @@
 .welcome-banner {
 	display: table;
+	padding-bottom: 20px;
 	width: 100%;
 	height: 100%;
 	max-height: 765px;
@@ -10,7 +11,10 @@
 		display: table-cell;
 		vertical-align: middle;
 		color: $white;
-
+		@media (max-width: 568px) {
+			padding-top: 30px;
+		}
+		
 		.banner-container {
 			@extend .container;
 
@@ -36,12 +40,17 @@
 					text-transform: uppercase;
 					font-weight: 500;
 					padding: 20px 40px;
+					white-space: inherit;
 
 					&:after {
 						@extend .glyphicon;
 						margin-left: 25px;
 						top: 2px;
 						content: "\e258";
+
+						@media (max-width: $screen-xs-min) {
+							display: none;
+						}
 					}
 				}
 			}
@@ -91,6 +100,11 @@
 		position: absolute;
 		left: 15px;
 		bottom: 0;
+
+		@media (max-width: 992px) {
+			position: inherit;
+			left: 0;
+		}
 	}
 }
 
