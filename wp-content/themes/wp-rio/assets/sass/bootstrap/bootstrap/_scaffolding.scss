@@ -46,12 +46,12 @@ textarea {
 // Links
 
 a {
-  color: $link-color;
+  color: $primary-color;
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: $link-hover-color;
+    color: #b96500;
     text-decoration: $link-hover-decoration;
   }
 

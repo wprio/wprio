@@ -41,6 +41,10 @@ img {
 	background-color: $light-gray;
 	top: 0;
 
+	@media (max-width: 568px) {
+		position: inherit;
+	}
+
 	&.active #logo {
 		width: 100px;
 		margin-left: 0;
