@@ -132,7 +132,7 @@
 					<?php endif; ?>
 					<h3 class="blog-entry-title"><?php the_title(); ?></h3>
 					<p class="blog-entry-excerpt"><?php the_excerpt(); ?></p>
-					<a class="btn btn-default" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">Leia esse artigo completo</a>
+					<a class="btn btn-default" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">Leia mais</a>
 				</article><!-- .blog-entry -->
 				<?php endwhile; ?>
 			</div>
