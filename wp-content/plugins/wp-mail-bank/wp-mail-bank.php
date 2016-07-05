@@ -4,7 +4,7 @@ Plugin Name: Wp Mail Bank
 Plugin URI: http://tech-banker.com
 Description: WP Mail Bank reconfigures the wp_mail() function and make it more enhanced.
 Author: Tech Banker
-Version: 1.35
+Version: 1.44
 Author URI: http://tech-banker.com
 License: GPLv3 or later
 */
@@ -56,7 +56,7 @@ function backend_plugin_css_scripts_mail_bank()
 	wp_enqueue_style("wp-mail-bank.css", plugins_url("/assets/css/wp-mail-bank.css",__FILE__));
 }
 
-function wp_mail_bank_configure($phpmailer) 
+function wp_mail_bank_configure($phpmailer)
 {
 	global $wpdb;
 	$data=$wpdb->get_row
@@ -64,9 +64,18 @@ function wp_mail_bank_configure($phpmailer)
 		"SELECT * FROM ".wp_mail_bank()
 	);
 	$mail_type = $data->mailer_type;
-	$phpmailer->Mailer = $data->mailer_type == 0 ? "smtp" : "mail"; 
-	$phpmailer->FromName = stripslashes(htmlspecialchars_decode($data->from_name, ENT_QUOTES));
-	$phpmailer->From = $data->from_email;
+	$phpmailer->Mailer = $data->mailer_type == 0 ? "smtp" : "mail";
+	$ux_chk_email_from_name = get_option("show_from_name_in_email");
+	if( $ux_chk_email_from_name == "" || $ux_chk_email_from_name == "1")
+	{
+		$phpmailer->FromName = stripslashes(htmlspecialchars_decode($data->from_name, ENT_QUOTES));
+	}
+	$ux_chk_from_email = get_option("show_from_email_in_email");
+	if( $ux_chk_from_email == "" || $ux_chk_from_email == "1")
+	{
+		$phpmailer->From = $data->from_email;
+	}
+
 	$phpmailer->Sender =  $data->return_path == 0 ? $data->return_email : $data->from_email;
 	$phpmailer->WordWrap = $data->word_wrap;
 	$phpmailer->SMTPOptions = array
@@ -79,7 +88,7 @@ function wp_mail_bank_configure($phpmailer)
 					)
 				);
 	if($data->mailer_type == 0)
-	{	
+	{
 		switch($data->encryption)
 		{
 			case 0 :
@@ -168,7 +177,7 @@ function add_mail_icon($meta = TRUE)
 				height=\"25\" style=\"vertical-align:text-top; margin-right:5px;\" />WP Mail Bank"),
 				"href" => __(site_url() . "/wp-admin/admin.php?page=smtp_mail"),
 				));
-					
+
 				$wp_admin_bar->add_menu(array(
 						"parent" => "mail_bank",
 						"id" => "Settings",
@@ -219,7 +228,7 @@ function add_mail_icon($meta = TRUE)
 				height=\"25\" style=\"vertical-align:text-top; margin-right:5px;\" />Wp Mail Bank"),
 				"href" => __(site_url() . "/wp-admin/admin.php?page=mail_settings"),
 				));
-					
+
 				$wp_admin_bar->add_menu(array(
 						"parent" => "mail_bank",
 						"id" => "Settings",
@@ -270,7 +279,7 @@ function add_mail_icon($meta = TRUE)
 				height=\"25\" style=\"vertical-align:text-top; margin-right:5px;\" />Wp Mail Bank"),
 				"href" => __(site_url() . "/wp-admin/admin.php?page=mail_settings"),
 				));
-					
+
 				$wp_admin_bar->add_menu(array(
 						"parent" => "mail_bank",
 						"id" => "Settings",
