@@ -301,14 +301,14 @@ function home_posts_limit( $query ) {
 
 add_action( 'pre_get_posts', 'home_posts_limit' );
 
-function the_excerpt_length( $length ) {
+function home_blog_boxes_excerpt( $length ) {
 	if ( is_front_page() ) {
 		$length = 20;
 	}
 	return $length;
 }
 
-add_filter( 'excerpt_length', 'the_excerpt_length' );
+add_filter( 'excerpt_length', 'home_blog_boxes_excerpt' );
 
 /**
  * Core Helpers.
