@@ -29,9 +29,11 @@
 			<?php foreach ( $events as $post ) : setup_postdata( $post ); ?>
 			<article class="event">
 				<div class="row">
-					<figure class="event-image">
-						<?php the_post_thumbnail( 'entry-thumb' ); ?>
-					</figure>
+					<a href="<?php the_permalink(); ?>">
+						<figure class="event-image">
+							<?php the_post_thumbnail( 'entry-thumb' ); ?>
+						</figure>
+					</a>
 					<div class="event-content">
 						<h3 class="event-title"><?php the_title(); ?></h3>
 						<p><?php the_excerpt(); ?></p>
@@ -53,9 +55,11 @@
 			<?php foreach ( $meetups as $post ) : setup_postdata( $post ); ?>
 			<article class="meetup">
 				<div class="row">
-					<figure class="meetup-image">
-						<?php the_post_thumbnail( 'entry-thumb' ); ?>
-					</figure>
+					<a href="<?php the_permalink(); ?>">
+						<figure class="meetup-image">
+							<?php the_post_thumbnail( 'entry-thumb' ); ?>
+						</figure>
+					</a>
 					<div class="meetup-content">
 						<h3 class="meetup-title"><?php the_title(); ?></h3>
 						<p><?php the_excerpt(); ?></p>
@@ -76,9 +80,11 @@
 						<a href="<?php the_field( 'link-slide' ); ?>" targer="_blank" rel="external">
 						<div class="slide">
 							<?php if ( has_post_thumbnail() ) : ?>
-							<figure class="slide-image">
-								<?php the_post_thumbnail( 'entry-thumb' ); ?>
-							</figure>
+								<a href="<?php the_permalink(); ?>">
+									<figure class="slide-image">
+										<?php the_post_thumbnail( 'entry-thumb' ); ?>
+									</figure>
+								</a>
 							<?php endif; ?>
 							<h4 class="slide-title"><?php the_title(); ?></h4>
 						</div>
@@ -126,13 +132,15 @@
 				<?php while( $articles->have_posts() ) : $articles->the_post(); ?>
 				<article class="blog-entry">
 					<?php if ( has_post_thumbnail() ) : ?>
-					<figure class="blog-entry-image">
-						<?php the_post_thumbnail( 'entry-thumb' ); ?>
-					</figure>
+						<a href="<?php the_permalink(); ?>">
+							<figure class="blog-entry-image">
+								<?php the_post_thumbnail( 'entry-thumb' ); ?>
+							</figure>
+						</a>
 					<?php endif; ?>
 					<h3 class="blog-entry-title"><?php the_title(); ?></h3>
 					<p class="blog-entry-excerpt"><?php the_excerpt(); ?></p>
-					<a class="btn btn-default" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">Leia esse artigo completo</a>
+					<a class="btn btn-default" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">Leia mais</a>
 				</article><!-- .blog-entry -->
 				<?php endwhile; ?>
 			</div>

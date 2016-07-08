@@ -24,15 +24,32 @@ else
 			"SELECT * FROM ".wp_mail_bank()
 		);
 		$admin_email = get_option( 'admin_email' );
-		
+$ux_chk_email_from_name = get_option("show_from_name_in_email");
+if($ux_chk_email_from_name == "1")
+{
+	$checked = "checked='checked'";
+}
+else if($ux_chk_email_from_name == "")
+{
+	$checked = "checked='checked'";
+}
+$ux_chk_from_email = get_option("show_from_email_in_email");
+if($ux_chk_from_email == "1")
+{
+	$checked_from_email = "checked='checked'";
+}
+else if($ux_chk_from_email == "")
+{
+	$checked_from_email = "checked='checked'";
+}
 	?>
 	<form id="ux_frm_email" class="layout-form" style="max-width:1000px;">
 		<div id="message" class="top-right message" style="display: none;">
 			<div class="message-notification"></div>
 			<div class="message-notification ui-corner-all growl-success" >
 				<div onclick="message_close();" id="close-message" class="message-close">x</div>
-				<div class="message-header"><?php _e("Success!",  mail_bank); ?></div>
-				<div class="message-message"><?php _e("Settings has been successfully saved.",  mail_bank); ?></div>
+				<div class="message-header"><?php _e("Success!",	mail_bank); ?></div>
+				<div class="message-message"><?php _e("Settings has been successfully saved.",	mail_bank); ?></div>
 			</div>
 		</div>
 		<div class="fluid-layout">
@@ -45,8 +62,14 @@ else
 							<div class="layout-control-group">
 								<label class="layout-control-label"><?php _e("From Name", mail_bank); ?> : <span class="error">*</span></label>
 								<div class="layout-controls">
-									<input type="text" name="ux_email_from_name" class="layout-span12" id="ux_email_from_name" placeholder="Please enter your From Name" value="<?php echo isset($email_data->from_name) ? stripcslashes(htmlspecialchars_decode($email_data->from_name)) : "WordPress" ;?>"/><br>
+									<input type="text" name="ux_email_from_name" class="layout-span12" id="ux_email_from_name" placeholder="Please enter your From Name" value="<?php echo isset($email_data->from_name) ? esc_html($email_data->from_name) : "WordPress" ;?>"/><br>
 									<p class="wpib-desc-italic"><?php _e("You can specify the name that emails should be sent from.", mail_bank); ?></p>
+								</div>
+							</div>
+							<div class="layout-control-group">
+								<label class="layout-control-label"></label>
+								<div class="layout-controls">
+									<input type="checkbox" value="1" name="ux_chk_email_from_name" style="margin-top:2px;" id="ux_chk_email_from_name" <?php echo isset($checked) ? $checked : ""; ?>/><label class="wpib-desc-italic"><?php _e("Yes use this Name to send in emails.", mail_bank); ?></label>
 								</div>
 							</div>
 							<div class="layout-control-group">
@@ -57,6 +80,12 @@ else
 								</div>
 							</div>
 							<div class="layout-control-group">
+								<label class="layout-control-label"></label>
+								<div class="layout-controls">
+									<input type="checkbox" value="1" name="ux_chk_from_email" style="margin-top:2px;" id="ux_chk_from_email" <?php echo isset($checked_from_email) ? $checked_from_email : ""; ?>/><label class="wpib-desc-italic"><?php _e("Yes use this From Email to send in emails.", mail_bank); ?></label>
+								</div>
+							</div>
+							<div class="layout-control-group">
 								<label class="layout-control-label"><?php _e("Mailer Type", mail_bank); ?> : <span class="error">*</span></label>
 								<div class="layout-controls rdl_mail_bank">
 									<?php
@@ -64,14 +93,14 @@ else
 									if($rdl_value == 1)
 									{
 									?>
-									<input type="radio" onclick="backup_rdl();"  id="ux_rdl_off" name="ux_rdl_ends" value="0" /><?php _e("Send all emails via SMTP", mail_bank); ?>
+									<input type="radio" onclick="backup_rdl();"	id="ux_rdl_off" name="ux_rdl_ends" value="0" /><?php _e("Send all emails via SMTP", mail_bank); ?>
 									<input type="radio" onclick="backup_rdl();" checked="checked" id="ux_rdl_on" style="margin-left: 10px;" name="ux_rdl_ends" value="1"/><?php _e("Use the PHP mail() function to send emails.", mail_bank); ?>
 									<?php
 									}
 									else {
 									?>
 									<input type="radio" onclick="backup_rdl();" checked="checked" id="ux_rdl_off" name="ux_rdl_ends" value="0" /><?php _e("Send all emails via SMTP", mail_bank); ?>
-									<input type="radio" onclick="backup_rdl();"  id="ux_rdl_on" style="margin-left: 10px;" name="ux_rdl_ends" value="1"/><?php _e("Use the PHP mail() function to send emails.", mail_bank); ?>
+									<input type="radio" onclick="backup_rdl();"	id="ux_rdl_on" style="margin-left: 10px;" name="ux_rdl_ends" value="1"/><?php _e("Use the PHP mail() function to send emails.", mail_bank); ?>
 									<?php
 									}
 									?>
@@ -126,7 +155,7 @@ else
 								<div class="layout-control-group">
 									<label class="layout-control-label"><?php _e("SMTP Port", mail_bank); ?> : <span class="error">*</span></label>
 									<div class="layout-controls">
-										<input type="text" name="ux_smtp_port" class="layout-span12"  id="ux_smtp_port" placeholder="Please enter your SMTP Port" value="<?php echo isset($email_data->smtp_port) ? $email_data->smtp_port : "25" ;?>"/><br>
+										<input type="text" name="ux_smtp_port" class="layout-span12"	id="ux_smtp_port" placeholder="Please enter your SMTP Port" value="<?php echo isset($email_data->smtp_port) ? $email_data->smtp_port : "25" ;?>"/><br>
 										<p class="wpib-desc-italic"><?php _e("You can specify the smtp port for sending your emails.", mail_bank); ?></p>
 									</div>
 								</div>
@@ -146,7 +175,7 @@ else
 										else if($rdl_data == 1)
 										{
 											?>
-										<input type="radio"  id="ux_rdl_encrption_no" name="ux_rdl_encrption" value="0" /><?php _e("No Encryption", mail_bank); ?>
+										<input type="radio"	id="ux_rdl_encrption_no" name="ux_rdl_encrption" value="0" /><?php _e("No Encryption", mail_bank); ?>
 										<input type="radio" checked="checked" id="ux_rdl_encrption_ssl" style="margin-left: 10px;" name="ux_rdl_encrption" value="1"/><?php _e("Use SSL Encryption", mail_bank); ?>
 										<input type="radio" id="ux_rdl_encrption_tls" name="ux_rdl_encrption" style="margin-left: 10px;" value="2"/><?php _e("Use TLS Encryption", mail_bank); ?>
 										<?php
@@ -154,8 +183,8 @@ else
 										else if($rdl_data == 2)
 										{
 											?>
-										<input type="radio"  id="ux_rdl_encrption_no" name="ux_rdl_encrption" value="0" /><?php _e("No Encryption", mail_bank); ?>
-										<input type="radio"  id="ux_rdl_encrption_ssl" style="margin-left: 10px;" name="ux_rdl_encrption" value="1"/><?php _e("Use SSL Encryption", mail_bank); ?>
+										<input type="radio"	id="ux_rdl_encrption_no" name="ux_rdl_encrption" value="0" /><?php _e("No Encryption", mail_bank); ?>
+										<input type="radio"	id="ux_rdl_encrption_ssl" style="margin-left: 10px;" name="ux_rdl_encrption" value="1"/><?php _e("Use SSL Encryption", mail_bank); ?>
 										<input type="radio" checked="checked" id="ux_rdl_encrption_tls" style="margin-left: 10px;" name="ux_rdl_encrption" value="2"/><?php _e("Use TLS Encryption", mail_bank); ?>
 										<?php
 										}
@@ -191,7 +220,7 @@ else
 											<div class="layout-control-group">
 												<label class="layout-control-label"><?php _e("SMTP Username", mail_bank); ?> : <span class="error">*</span></label>
 												<div class="layout-controls">
-													<input type="text" id="ux_txt_username" name="ux_txt_username" placeholder="Please enter Username"  class="layout-span12"  value="<?php echo isset($email_data->smtp_username) ? stripslashes($email_data->smtp_username) : "" ;?>"/>
+													<input type="text" id="ux_txt_username" name="ux_txt_username" placeholder="Please enter Username"	class="layout-span12"	value="<?php echo isset($email_data->smtp_username) ? stripslashes($email_data->smtp_username) : "" ;?>"/>
 												</div>
 											</div>
 										</div>
@@ -199,7 +228,7 @@ else
 											<div class="layout-control-group">
 												<label class="layout-control-label"><?php _e("SMTP Password", mail_bank); ?> : <span class="error">*</span></label>
 												<div class="layout-controls">
-													<input type="password" id="ux_txt_password" placeholder="Please enter Password"   name="ux_txt_password" style="margin-left: -26px;" class="layout-span12"  value="<?php echo isset($email_data->smtp_password) ? stripcslashes(htmlspecialchars_decode($email_data->smtp_password)) : "" ;?>">
+													<input type="password" id="ux_txt_password" placeholder="Please enter Password"	 name="ux_txt_password" style="margin-left: -26px;" class="layout-span12"	value="<?php echo isset($email_data->smtp_password) ? stripcslashes(htmlspecialchars_decode($email_data->smtp_password)) : "" ;?>">
 												</div>
 											</div>
 										</div>
@@ -217,7 +246,7 @@ else
 										<input type="radio" style="margin-left: 10px;" id="ux_rdl_smtp_disable" name="ux_rdl_smtp_alive" value="1"/><?php _e("Disable", mail_bank); ?>
 										<?php
 										}
-										else 
+										else
 										{
 										?>
 										<input type="radio" id="ux_rdl_smtp_enable" name="ux_rdl_smtp_alive" value="0" /><?php _e("Enable", mail_bank); ?>
@@ -247,52 +276,82 @@ jQuery(document).ready(function()
 	smtp_username();
 
 });
-
+if(typeof(base64_encode) != "function")
+{
+	function base64_encode(data)
+	{
+		var b64 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+		var o1, o2, o3, h1, h2, h3, h4, bits, i = 0,
+		ac = 0,
+		enc = '',
+		tmp_arr = [];
+		if (!data)
+		{
+			return data;
+		}
+		do
+		{
+			o1 = data.charCodeAt(i++);
+			o2 = data.charCodeAt(i++);
+			o3 = data.charCodeAt(i++);
+			bits = o1 << 16 | o2 << 8 | o3;
+			h1 = bits >> 18 & 0x3f;
+			h2 = bits >> 12 & 0x3f;
+			h3 = bits >> 6 & 0x3f;
+			h4 = bits & 0x3f;
+			tmp_arr[ac++] = b64.charAt(h1) + b64.charAt(h2) + b64.charAt(h3) + b64.charAt(h4);
+		}
+		while (i < data.length);
+		enc = tmp_arr.join('');
+		var r = data.length % 3;
+		return (r ? enc.slice(0, r - 3) : enc) + '==='.slice(r || 3);
+	}
+}
 jQuery("#ux_frm_email").validate
-({	
+({
 	rules:
-	{	
+	{
 		ux_email_from_name:
-		{ 
+		{
 			required: true
 		},
 		ux_email_from_email:
-		{ 
+		{
 			required: true,
 			email: true
 		},
 		ux_return_email:
-		{ 
+		{
 			required: true,
 			email: true
 		},
 		ux_smtp_port:
-		{ 
+		{
 			required: true,
 			digits: true
 		},
 		ux_smtp_host:
-		{ 
+		{
 			required: true
 		},
 		ux_txt_username:
-		{ 
+		{
 			required: true
 		},
 		ux_rdl_ends:
-		{ 
+		{
 			required: true
 		},
 		ux_rdl_encrption:
-		{ 
+		{
 			required: true
 		},
 		ux_rdl_authentication_bank:
-		{ 
+		{
 			required: true
 		},
 		ux_txt_password:
-		{ 
+		{
 			required: true
 		},
 		ux_word_wrap:
@@ -321,11 +380,12 @@ jQuery("#ux_frm_email").validate
 		jQuery("body").append(overlay_opacity);
 		var overlay = jQuery("<div class=\"loader_opacity\"><div class=\"processing_overlay\"></div></div>");
 		jQuery("body").append(overlay);
-		
+
 		var password= encodeURIComponent(jQuery("#ux_txt_password").val());
-		var from_name= encodeURIComponent(jQuery("#ux_email_from_name").val());	
+		var from_name= jQuery("#ux_email_from_name").val();
+
 		jQuery("#form_success_message").css("display","block");
-		jQuery.post(ajaxurl, jQuery(form).serialize() +"&password="+password+"&from_name="+from_name+"&param=add_mail_detail&action=add_mail_library", function(data)
+		jQuery.post(ajaxurl, jQuery(form).serialize() +"&password="+password+"&from_name="+base64_encode(from_name)+"&param=add_mail_detail&action=add_mail_library", function(data)
 		{
 			setTimeout(function () {
 				jQuery("#message").css("display", "block");
