@@ -166,10 +166,10 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		/*
 		 * Image sizes for cropping
 		 */
-		add_image_size( 'entry-thumb', 300, 225, array( 'center', 'center' ) );
-		add_image_size( 'entry-large', 940, 350, array( 'center', 'center' ) );
-		add_image_size( 'partners-thumb', 220, 165, array( 'center', 'center' ) );
-		add_image_size( 'organizer-thumb', 220, 290, array( 'center', 'center' ) );
+		add_image_size( 'entry-thumb', 300, 225, array( 'center', 'center', 'true' ) );
+		add_image_size( 'entry-large', 940, 350, array( 'center', 'center', 'true' ) );
+		add_image_size( 'partners-thumb', 220, 165, array( 'center', 'center', 'true' ) );
+		add_image_size( 'organizer-thumb', 220, 290, array( 'center', 'center', 'true' ) );
 	}
 }
 
