@@ -488,3 +488,81 @@ function odin_autoset_featured() {
 function odin_debug( $variable ) {
 	echo '<pre>' . print_r( $variable, true ) . '</pre>';
 }
+
+/*--------------------------------------------------------------
+	ALTERA LOGO DO PAINEL DE LOGIN
+--------------------------------------------------------------*/
+add_action('login_head',  'btwp_change_admin_logo');
+
+function btwp_change_admin_logo(){
+    echo
+    '<style>
+	#login h1 a{ 
+		background: url('.get_bloginfo('template_directory').'/assets/images/logo.png)!important;	
+		width: 107px !important;
+		height: 108px !important;
+		background-size: 100% !important;
+	}
+	
+	.button-primary{
+		background: #F7941D !important;
+		border-color: #F7941D !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+  	}
+
+	body.login {
+        background: #315B86;
+    }  	
+
+    .login form{
+		background: #315B86;
+		border: 1px solid #2b5177;
+    }  
+
+    #nav a, .login h1 a, .login #backtoblog a {
+    	color: ##fff !important;
+	} 
+
+    #nav a:hover, .login h1 a:hover, .login #backtoblog a:hover {
+    	color: #fff !important;
+    	text-decoration: underline;
+	}	
+
+	.login label {
+		color: #fff;
+	}	        
+	</style>';
+}
+
+
+/*--------------------------------------------------------------
+	ALTERA URL DO PAINEL DE LOGIN
+--------------------------------------------------------------*/
+add_filter('login_headerurl', 'btwp_change_admin_url');
+
+function btwp_change_admin_url(){
+	return get_bloginfo('url');
+}
+
+/*--------------------------------------------------------------
+	ALTERA TÍTULO DO PAINEL DE LOGIN
+--------------------------------------------------------------*/
+add_filter('login_headertitle', 'btwp_change_admin_title');
+
+function btwp_change_admin_title(){
+	return get_option('blogname');
+}
+
+add_action('admin_footer','posts_status_color');
+  function posts_status_color(){
+	?>
+		<style>
+			.status-draft{background: #FCE3F2 !important;}
+		 	.status-pending{background: #87C5D6 !important;}
+		 	.status-publish{/* no background keep wp alternating colors */}
+		  	.status-future{background: #C6EBF5 !important;}
+		 	.status-private{background:#F2D46F;}
+		</style>
+	<?php
+}
