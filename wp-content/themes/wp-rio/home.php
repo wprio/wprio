@@ -20,11 +20,11 @@
 						Publicado por <?php the_author(); ?>
 						em <?php the_date(); ?> na categoria <?php the_category(', '); ?>
 					</span>
-					<?php if ( has_post_thumbnail() ) : ?>
-					<figure class="entry-image">
-						<?php the_post_thumbnail( 'entry-large' ); ?>
-					</figure>
-					<?php endif; ?>
+					<picture>
+						<a href="<?php the_permalink(); ?>">
+		        			<?php if( has_post_thumbnail() ) the_post_thumbnail( 'entry-large', array( 'class' => 'entry-image' ) ); ?>
+		        		</a>
+		        	</picture>
 					<?php the_excerpt(); ?>
 					<a class="entry-comments" href="<?php comments_link(); ?>"><?php comments_number(); ?></a>
 				</article>
