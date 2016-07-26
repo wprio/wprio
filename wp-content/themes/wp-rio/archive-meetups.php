@@ -44,8 +44,8 @@ get_header(); ?>
 				<hr />
 				<section class="events">
 					<h2>ÚLTIMAS EDIÇÕES DO MEETUP CARIOCA</h2>
-					<?php while ( $args->have_posts() ) : $args->the_post(); ?>
-						<div class="col-sm-4">
+					<?php while ( $args->have_posts() ) : $args->the_post(); ?>	
+						<div class="col-xs-6 col-sm-4">
 							<?php 
 								if ( has_post_thumbnail() ) {
 									echo '<a href="'.get_the_permalink().'">';
@@ -54,7 +54,7 @@ get_header(); ?>
 								}
 							?>	
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						</div> 		
+						</div>		
 					<?php endwhile; ?>
 				</section>
 
