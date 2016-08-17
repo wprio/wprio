@@ -30,17 +30,22 @@ get_header(); ?>
 				</div><!-- .entry-content -->
 			</article><!-- #post-## -->
 
-			<?php 
-				if ( have_posts() ):
-			?>
-					<hr />
-					<section class="events">
-						<h2>ÚLTIMAS EDIÇÕES DO MEETUP CARIOCA</h2>
-						<?php
-							
-							while ( have_posts() ) : the_post();
-						?>
-							<div class="col-sm-4">
+			<?php
+				$args = new WP_query(
+				    array(
+				        'post_type'         => 'meetups', // cpt
+				        'posts_per_page'    => -1,
+				        'paged'             => $paged
+				    )
+				);
+			?>			
+
+			<?php if ( $args->have_posts() ): ?>
+				<hr />
+				<section class="events">
+					<h2>ÚLTIMAS EDIÇÕES DO MEETUP CARIOCA</h2>
+					<?php while ( $args->have_posts() ) : $args->the_post(); ?>	
+						<div class="col-xs-6 col-sm-4">
 							<?php 
 								if ( has_post_thumbnail() ) {
 									echo '<a href="'.get_the_permalink().'">';
@@ -49,15 +54,11 @@ get_header(); ?>
 								}
 							?>	
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-							</div> 		
+						</div>		
+					<?php endwhile; ?>
+				</section>
 
-						<?php
-							endwhile;
-						?>
-					</section>
-			<?php
-				endif;
-			?>
+			<?php endif; wp_reset_postdata(); ?>
 		</main><!-- #main -->
 	</div>
 
