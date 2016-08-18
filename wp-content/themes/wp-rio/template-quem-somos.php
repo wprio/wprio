@@ -16,7 +16,7 @@ get_header(); ?>
 			?>
 					<hr />
 					<section class="players">
-						<h1>Escala&ccedil;&atilde;o do time WP-Rio</h2>
+						<h1>Escala&ccedil;&atilde;o do time WP-Rio</h1>
 						<?php
 							while( have_rows('equipe') ): the_row();
 						?>		<div class="row">
