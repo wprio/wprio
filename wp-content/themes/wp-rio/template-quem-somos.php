@@ -16,37 +16,37 @@ get_header(); ?>
 			?>
 					<hr />
 					<section class="players">
-						<h2>Escala&ccedil;&atilde;o do time WP-Rio</h2>
+						<h1>Escala&ccedil;&atilde;o do time WP-Rio</h2>
 						<?php
 							while( have_rows('equipe') ): the_row();
 						?>		<div class="row">
-									<div class="col-sm-4">
+									<div class="col-xs-4 col-sm-4 col-md-3 text-center">
 										<?php 
 											$image_url = wp_get_attachment_image_src( get_sub_field('foto-perfil'), 'full' );
 											echo "<img src='".$image_url[0]."' title='".get_sub_field('nome-pessoa')."' alt='".get_sub_field('nome-pessoa')."' />";
 										?>
 									</div>
-									<div class="col-sm-8">
-										<h3 class="post-title">
+									<div class="col-xs-8 col-sm-8 col-md-9">
+										<h2 class="post-title">
 											<?php the_sub_field('nome-pessoa'); ?>
-										</h3>
-
+										</h2>
 										<p>
 											<?php the_sub_field('descricao'); ?>
 										</p>
 										<?php 
 											if( have_rows('ícones-sociais') ): ?>
-												<ul class="equipe-social">
+												<ul class="equipe-social text-center">
 												<?php 
 													while( have_rows('ícones-sociais') ): the_row(); ?>
 													<li><a href="<?php the_sub_field( 'link-rede' ); ?>" target="_blank" rel="external"><?php the_sub_field( 'classe-icone' ); ?></a></li>
 												<?php 
-													endwhile; 
+													endwhile;
 												?>
 												</ul>
 											<?php endif; //if( get_sub_field('items') ): ?>
 									</div>
 								</div>
+								<hr />
 						<?php
 								
 							endwhile;
