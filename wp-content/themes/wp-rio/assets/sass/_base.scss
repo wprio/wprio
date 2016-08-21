@@ -13,7 +13,7 @@ img {
 	max-width: 100%;
 }
 
-.btn {
+/*.btn {
 	&:after {
 		@extend .glyphicon;
 		top: 2px;
@@ -31,33 +31,38 @@ img {
 			margin-left: 25px;
 		}
 	}
-}
-	
-.main-nav {
-	position: fixed;
-	width: 100%;
-	height: 68px;
-	z-index: 999;
-	background-color: $light-gray;
-	top: 0;
+}*/
 
-	@media (max-width: 568px) {
-		position: inherit;
+.navbar {
+	background-color: transparent;
+	border-color: transparent;
+
+	@media (min-width: $screen-sm-min) {
+		background-color: $light-gray;
+	}
+
+	.navbar-collapse {
+		border-color: transparent;
+		background-color: transparent;
+	}
+
+	.navbar-header {
+		background-color: $light-gray;
 	}
 
 	&.active #logo {
 		width: 100px;
 		margin-left: 0;
-		@media (min-width: $screen-md-min) {
+		@media (min-width: $screen-sm-min) {
 			margin-left: -50px;
 		}
 	}
-
 	#logo {
 		position: absolute;
 		display: block;
 		width: 100px;
 		left: 30px;
+		z-index: 999;
 		@include transition(all .3s);
 
 		@media (min-width: $screen-md-min) {
@@ -70,34 +75,21 @@ img {
 			max-width: 100%;
 		}
 	}
-
-	.menu-toggle {
-		@extend .glyphicon;
-		@extend .glyphicon-menu-hamburger;
-		float: right;
-		height: 35px;
-		overflow: hidden;
-		color: $base-color;
-
-		&:after {
-			content: '';
-			display: none;
-		}
-
-		@media (min-width: $screen-sm-min) {
-			display: none;
-		}
-	}
-	
 	.menu {
-		display: none;
 		list-style-type: none;
+		background-color: $light-gray;
 		height: 100%;
 		margin-bottom: 0;
+		float: right;
+		padding-top: 5px;
+		padding-bottom: 15px;
 		@extend .container;
 
 		@media (min-width: $screen-sm-min) {
 			display: block;
+			float: none;
+			padding-top: 0px;
+			padding-bottom: 0px;
 		}
 
 		&:after {
@@ -105,10 +97,15 @@ img {
 		}
 
 		.menu-item {
-			float: left;
 			height: inherit;
+			float: none;
+
+			@media (min-width: $screen-sm-min) {
+				float: right;
+			}
 			
 			@media (min-width: $screen-md-min) {
+				float: left;
 				&:nth-child(n+4) {
 					float: right;
 				}
@@ -120,7 +117,7 @@ img {
 				padding: 0 15px;
 				font-weight: 400;
 				font-size: 15px;
-				line-height: 68px;
+				line-height: 60px;
 				color: $base-color;
 				text-decoration: none;
 				text-transform: uppercase;
@@ -133,14 +130,14 @@ img {
 		}
 	}
 }
-
+	
 .admin-bar .main-nav {
 	top: 32px;
 }
 
 .context-banner {
 	height: 110px;
-	margin: 68px 0 50px;
+	margin: 50px 0 50px;
 	border-bottom: 4px solid $primary-color;
 }
 
