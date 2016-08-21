@@ -37,7 +37,7 @@
 					<div class="event-content">
 						<h3 class="event-title"><?php the_title(); ?></h3>
 						<p><?php the_excerpt(); ?></p>
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="btn btn-default">Saiba mais desse evento</a>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="btn btn-default btn-icon">Saiba mais desse evento</a>
 					</div>
 				</div>
 			</article><!-- .event -->
@@ -63,7 +63,7 @@
 					<div class="meetup-content">
 						<h3 class="meetup-title"><?php the_title(); ?></h3>
 						<p><?php the_excerpt(); ?></p>
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="btn btn-default">Saiba mais desse evento</a>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="btn btn-default btn-icon">Saiba mais desse evento</a>
 					</div>
 				</div>
 
@@ -140,7 +140,7 @@
 					<?php endif; ?>
 					<h3 class="blog-entry-title"><?php the_title(); ?></h3>
 					<p class="blog-entry-excerpt"><?php the_excerpt(); ?></p>
-					<a class="btn btn-default" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">Leia mais</a>
+					<a class="btn btn-default btn-icon" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">Leia mais</a>
 				</article><!-- .blog-entry -->
 				<?php endwhile; ?>
 			</div>
