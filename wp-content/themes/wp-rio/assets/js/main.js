@@ -22,10 +22,10 @@ jQuery(document).ready(function($) {
 	$( window ).scroll(function() {
 		var top = $(this).scrollTop();
 		if ( top > 0 ) {
-			$( '.main-nav' ).addClass( 'active' );
+			$( '.navbar' ).addClass( 'active' );
 		}
 		else {
-			$( '.main-nav' ).removeClass( 'active' );
+			$( '.navbar' ).removeClass( 'active' );
 		}
 	});
 
