@@ -1,106 +1,86 @@
 <?php
-	/* 
-	 * Template Name: Certificado 
-	 * Description: Template feito na ridicularidade máxima, por favor na ria ou chore disso. Não cara, para. Sério. Segura as lágrimas pf :(
-	*/
-	
-	if ( isset( $_GET['email'] ) ) {
-		$email = $_GET['email'];
-	}
+/**
+ * Template Name: Certificado
+ * Description: Template feito na ridicularidade máxima, por favor na ria ou chore disso. Não cara, para. Sério. Segura as lágrimas pf :(
+ */
 
-	$html = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
-			<title>Certificado - WordCamp RJ 2015</title>
-			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic">
-			<link rel="stylesheet" href="'.get_template_directory_uri().'/inc/certificate/css/certificate.css">
-		</head>
-		<body>';
+require_once get_template_directory() . '/inc/certificate/lib/excel_reader2.php';
+require_once get_template_directory() . '/inc/certificate/lib/mpdf/mpdf.php';
 
-	if ( ! empty( $email ) && filter_var( $email, FILTER_VALIDATE_EMAIL ) ) {
+if ( isset( $_GET['email'] ) ) {
+	$email       = sanitize_email( $_GET['email'] );
+	$spreadsheet = get_template_directory() . '/inc/certificate/docs/2015/participantes.xls';
+	$reader      = new Spreadsheet_Excel_Reader( $spreadsheet );
+	$count       = $reader->rowcount();
 
-		require_once get_template_directory() . '/inc/certificate/lib/excel_reader2.php';
-		
-		define( 'MPDF_PATH', get_template_directory() . '/inc/certificate/lib/mpdf' );
-	  	require_once( MPDF_PATH . '/mpdf.php' );
-		
-		$excel = new Spreadsheet_Excel_Reader(get_template_directory() . '/inc/certificate/docs/participantes.xls');
-		$mpdf = new mPDF('utf-8', 'A4-L', 0, '', 0, 0, 3, 0, 0, 0);
-		$certificate = array();
-		$date = getdate();
-		$count = $excel->rowcount();
+	for ( $i = 0; $i < $count + 1; $i++ ) {
+		$current_email = $reader->val( $i, 3 );
 
-		for ( $i = 0; $i < $count + 1; $i++ ) {
-			$current_email = $excel->val( $i, 3 );
-			
-			if ( $current_email == $email ) {
-				$first_name = $excel->val( $i, 1 );
-				$last_name	= $excel->val( $i, 2 );
+		if ( $current_email === $email ) {
+			$first_name = $reader->val( $i, 1 );
+			$last_name	= $reader->val( $i, 2 );
 
-				$certificate['name'] = utf8_encode( $first_name . ' ' . $last_name );
-				$certificate['type'] = $excel->val( $i, 4 );
-				break;
-			}
-		}
-
-		if ( isset( $certificate['name'] ) ) {
-
-			$html .= '<div class="certificate">
-				<div class="certificate-label">
-					<div class="certificate-pre">Certificamos que</div>
-					<div class="certificate-name">'. $certificate['name'] .'</div>';
-					
-			switch ( $certificate['type'] ) {
-				case 'palestrante' :
-					$html .= '<div class="certificate-description">
-						participou do evento "WordCamp Rio de Janeiro 2015",
-						no dia 29 de agosto de 2015, na cidade do Rio de Janeiro,
-						na qualidade de <strong>palestrante</strong>.
-					</div>';
-					break;
-				case 'voluntario' :
-					$html .= '<div class="certificate-description">
-						participou do evento "WordCamp Rio de Janeiro 2015",
-						no dia 29 de agosto de 2015, na cidade do Rio de Janeiro,
-						na qualidade de <strong>voluntário</strong>, com carga horária de 10 horas
-					</div>';
-					break;
-
-				default:
-					$html .= '<div class="certificate-description">
-						participou do evento "WordCamp Rio de Janeiro 2015",<br />
-						no dia 29 de agosto de 2015, na cidade do Rio de Janeiro,<br />
-						na qualidade de <strong>participante</strong>, com carga horária de 10 horas.
-					</div>';
-					break;
-			} 
-
-			$html .= '<div class="certificate-date">Rio de Janeiro, '. $date['mday'] . '/' . $date['mon'] . '/' . $date['year'].'</div>
-			</div></div>';
-
-			$html .= '</body></html>';
-
-			$mpdf->WriteHTML( $html	 );
-			$mpdf->Output();
-
-		}
-
-		else {
-			$html .= '<p class="alert">
-				Não existe nenhum certificado para este e-mail.<br />
-				<a href="javascript:history.back(-1);">< Voltar</a>
-			</p>';
-			$html .= '</body></html>';
-
-			echo $html;
+			$attendee_name = utf8_encode( $first_name . ' ' . $last_name );
+			$attendee_role = sanitize_title( $reader->val( $i, 4 ) );
+			break;
 		}
 	}
-	else {
 
-		$html .= '<p class="alert">
-			E-mail inválido.<br />
+	ob_start();
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/inc/certificate/css/certificate.css'; ?>">
+	</head>
+	<body>
+		<?php if ( isset( $attendee_name ) ) : ?>
+		<div class="certificate">
+			<div class="certificate-label">
+				<div class="certificate-pre">Certificamos que</div>
+				<div class="certificate-name"><?php echo esc_html( $attendee_name ); ?></div>
+				<div class="certificate-description">
+					<?php switch ( $attendee_role ) : case 'palestrante' : ?>
+					participou do evento "WordCamp Rio de Janeiro 2016",
+					no dia 24 de setembro de 2016, na cidade do Rio de Janeiro,
+					na qualidade de <strong>palestrante</strong>.
+					<?php break; case 'voluntario' : ?>
+					participou do evento "WordCamp Rio de Janeiro 2016",
+					no dia 24 de setembro de 2016, na cidade do Rio de Janeiro,
+					na qualidade de <strong>voluntário</strong>, com carga horária de 12 horas
+					<?php break; default: ?>
+					participou do evento "WordCamp Rio de Janeiro 2016",<br />
+					no dia 24 de setembro de 2016, na cidade do Rio de Janeiro,<br />
+					na qualidade de <strong>participante</strong>, com carga horária de 8 horas.
+					<?php break; endswitch; ?>
+				</div><!-- .certificate-description -->
+				<div class="certificate-date">
+					Rio de Janeiro, <?php echo esc_html( date( 'd/m/y' ) ); ?>
+				</div><!-- certificate-date -->
+			</div><!-- .certificate-label -->
+		</div><!-- .certificate -->
+		<?php else : ?>
+		<p class="alert">
+			Não existe nenhum certificado para o email: <strong><?php echo $email; ?></strong><br />
 			<a href="javascript:history.back(-1);">< Voltar</a>
-		</p>';
+		</p>
+		<?php endif; ?>
+	</body>
+</html>
+<?php
+	$html = ob_get_clean();
 
-		$html .= '</body></html>';
-
+	if ( isset( $attendee_name ) ) {
+		$mpdf = new mPDF( 'utf-8', 'A4-L', 0, '', 0, 0, 3, 0, 0, 0 );
+		$mpdf->WriteHTML( $html );
+		$mpdf->Output();
+	} else {
 		echo $html;
 	}
+} else {
+	wp_redirect( home_url() );
+}
+?>
