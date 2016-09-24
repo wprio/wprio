@@ -9,7 +9,7 @@ require_once get_template_directory() . '/inc/certificate/lib/mpdf/mpdf.php';
 
 if ( isset( $_GET['email'] ) ) {
 	$email       = sanitize_email( $_GET['email'] );
-	$spreadsheet = get_template_directory() . '/inc/certificate/docs/2015/participantes.xls';
+	$spreadsheet = get_template_directory() . '/inc/certificate/docs/2016/participantes.xls';
 	$reader      = new Spreadsheet_Excel_Reader( $spreadsheet );
 	$count       = $reader->rowcount();
 
@@ -20,7 +20,7 @@ if ( isset( $_GET['email'] ) ) {
 			$first_name = $reader->val( $i, 1 );
 			$last_name	= $reader->val( $i, 2 );
 
-			$attendee_name = utf8_encode( $first_name . ' ' . $last_name );
+			$attendee_name = $first_name . ' ' . $last_name;
 			$attendee_role = sanitize_title( $reader->val( $i, 4 ) );
 			break;
 		}
