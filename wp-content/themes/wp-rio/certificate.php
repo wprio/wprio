@@ -14,14 +14,11 @@ if ( isset( $_GET['email'] ) ) {
 	$count       = $reader->rowcount();
 
 	for ( $i = 0; $i < $count + 1; $i++ ) {
-		$current_email = $reader->val( $i, 3 );
+		$current_email = $reader->val( $i, 2 );
 
 		if ( $current_email === $email ) {
-			$first_name = $reader->val( $i, 1 );
-			$last_name	= $reader->val( $i, 2 );
-
-			$attendee_name = $first_name . ' ' . $last_name;
-			$attendee_role = sanitize_title( $reader->val( $i, 4 ) );
+			$attendee_name = sanitize_text_field( $reader->val( $i, 1 ) );
+			$attendee_role = sanitize_title( $reader->val( $i, 3 ) );
 			break;
 		}
 	}
