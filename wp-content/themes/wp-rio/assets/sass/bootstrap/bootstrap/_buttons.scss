@@ -27,9 +27,6 @@
     &.focus {
       @include tab-focus;
     }
-    @media (max-width: 992px) {
-      margin: 20px 0;
-    }
   }
 
   &:hover,
