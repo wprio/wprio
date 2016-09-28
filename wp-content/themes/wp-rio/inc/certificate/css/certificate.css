@@ -8,7 +8,7 @@ body {
 .certificate {
 	width: 1024px;
 	height: 768px;
-	background: url('../img/certificado-bg.jpg') center center;
+	background: url('../img/2016/certificado-bg.jpg') center center;
 	margin: 20px auto 0;
 }
 
@@ -33,7 +33,7 @@ body {
 	font-size: 45px;
 	line-height: 45px;
 	font-weight: 700;
-	padding: 20px 0 10px;
+	padding: 10px 0 10px;
 	text-transform: uppercase;
 }
 
