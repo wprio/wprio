@@ -1,5 +1,5 @@
 # WP-Rio
-Um Grupo de amigos com o interesse em comum de disseminar o conhecimento e a paixão pelo WordPress criou a primeira comunidade no Rio de Janeiro. Esse Grupo trouxe os primeiros Meetups e com todo o esforço pleiteou e conseguiu trazer o primeiro WordCamp em 2014. E esse grupo de amigos cresceu e com a chegada de novas pessoas com esse mesmo interesse em comum foi criado o WP-RIO, para organizar e manter os eventos acontecendo em terras cariocas. 
+Um grupo de amigos com o interesse em comum de disseminar o conhecimento e a paixão pelo WordPress criou a primeira comunidade no Rio de Janeiro. Esse Grupo trouxe os primeiros Meetups e com todo o esforço pleiteou e conseguiu trazer o primeiro WordCamp em 2014. E esse grupo de amigos cresceu e com a chegada de novas pessoas com esse mesmo interesse em comum foi criado o WP-RIO, para organizar e manter os eventos acontecendo em terras cariocas. 
 
 ## Site oficial do WP-Rio
 O site WP Rio abriga todas as informações pertinentes aos Meetups e WordCamps, gerencia todo o histórico de nossas atividades e contém uma cópia de nosso código de conduta.
