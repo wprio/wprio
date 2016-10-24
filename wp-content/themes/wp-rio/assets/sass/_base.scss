@@ -183,9 +183,22 @@ img {
 	background: $base-color url('../images/footer.jpg') no-repeat center center;
 	@include clearfix;
 
+	.copyright {
+		float: left;
+		@media (max-width: $screen-xs-max) {
+			width: 100%;
+			text-align: center;
+		}
+	}
+
 	.credits {
-		text-align: right;
 		float: right;
+		text-align: right;
+		@media (max-width: $screen-xs-max) {
+			width: 100%;
+			text-align: center;
+			margin: 20px 0 0;
+		}
 	}
 
 	.social-medias {
