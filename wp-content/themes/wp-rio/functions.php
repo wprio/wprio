@@ -125,7 +125,7 @@ if ( ! function_exists( 'odin_setup_features' ) ) {
 		/**
 		 * Support Custom Editor Style.
 		 */
-		add_editor_style( 'assets/css/editor-style.css' );
+		// add_editor_style( 'assets/css/editor-style.css' );
 
 		/**
 		 * Add support for infinite scroll.
