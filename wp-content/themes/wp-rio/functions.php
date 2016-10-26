@@ -245,6 +245,9 @@ function odin_enqueue_scripts() {
 	// Roboto Font Family
 	wp_enqueue_style( 'roboto-family', '//fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500,500italic,700,700italic', array(), null, 'all' );
 
+	// Open Sans Font Family
+	wp_enqueue_style( 'roboto-family', '//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i', array(), null, 'all' );
+
 	// Loads Odin main stylesheet.
 	wp_enqueue_style( 'odin-style', get_stylesheet_uri(), array(), null, 'all' );
 
