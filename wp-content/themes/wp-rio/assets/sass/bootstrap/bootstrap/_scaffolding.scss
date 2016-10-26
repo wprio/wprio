@@ -42,6 +42,14 @@ textarea {
   line-height: inherit;
 }
 
+p {
+	color: #262626;
+	font-family: $font-family-texts;
+	font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    line-height: 1.5;
+}
 
 // Links
 
