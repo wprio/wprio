@@ -9,7 +9,7 @@ require_once get_template_directory() . '/inc/certificate/lib/mpdf/mpdf.php';
 
 if ( isset( $_GET['email'] ) ) {
 	$email       = sanitize_email( $_GET['email'] );
-	$spreadsheet = get_template_directory() . '/inc/certificate/docs/2016/participantes.xls';
+	$spreadsheet = get_template_directory() . '/inc/certificate/docs/2016/20-meetup.xls';
 	$reader      = new Spreadsheet_Excel_Reader( $spreadsheet );
 	$count       = $reader->rowcount();
 
@@ -40,19 +40,8 @@ if ( isset( $_GET['email'] ) ) {
 				<div class="certificate-pre">Certificamos que</div>
 				<div class="certificate-name"><?php echo esc_html( $attendee_name ); ?></div>
 				<div class="certificate-description">
-					<?php switch ( $attendee_role ) : case 'palestrante' : ?>
-					participou do evento "WordCamp Rio de Janeiro 2016",
-					no dia 24 de setembro de 2016, na cidade do Rio de Janeiro,
-					na qualidade de <strong>palestrante</strong>.
-					<?php break; case 'voluntario' : ?>
-					participou do evento "WordCamp Rio de Janeiro 2016",
-					no dia 24 de setembro de 2016, na cidade do Rio de Janeiro,
-					na qualidade de <strong>voluntário</strong>, com carga horária de 12 horas
-					<?php break; default: ?>
-					participou do evento "WordCamp Rio de Janeiro 2016",<br />
-					no dia 24 de setembro de 2016, na cidade do Rio de Janeiro,<br />
-					na qualidade de <strong>participante</strong>, com carga horária de 8 horas.
-					<?php break; endswitch; ?>
+					participou do 20º WordPress Meetup, no dia 29 de outubro de 2016,
+					na Universidade Veiga de Almeida, com carga horária de 3 horas.
 				</div><!-- .certificate-description -->
 				<div class="certificate-date">
 					Rio de Janeiro, <?php echo esc_html( date( 'd/m/y' ) ); ?>
