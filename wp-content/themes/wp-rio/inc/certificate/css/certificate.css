@@ -8,12 +8,12 @@ body {
 .certificate {
 	width: 1024px;
 	height: 768px;
-	background: url('../img/2016/certificado-bg.jpg') center center;
+	background: url('../img/2016/certificado-bg-meetup.jpg') center center;
 	margin: 20px auto 0;
 }
 
 .certificate .certificate-label {
-	width: 725px;
+	width: 775px;
 	margin: 0 auto;
 	text-align: center;
 	color: #fff;
@@ -25,7 +25,7 @@ body {
 	font-size: 30px;
 	line-height: 30px;
 	font-weight: 700;
-	padding-top: 20px;
+	padding-top: 80px;
 }
 
 .certificate-name {
@@ -46,7 +46,7 @@ body {
 	display: block;
 	font-size: 25px;
 	line-height: 35px;
-	padding: 7px 0 10px;
+	padding: 150px 0 10px;
 }
 
 .alert {
