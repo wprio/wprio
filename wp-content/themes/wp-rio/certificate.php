@@ -9,7 +9,7 @@ require_once get_template_directory() . '/inc/certificate/lib/mpdf/mpdf.php';
 
 if ( isset( $_GET['email'] ) ) {
 	$email       = sanitize_email( $_GET['email'] );
-	$spreadsheet = get_template_directory() . '/inc/certificate/docs/2016/20-meetup.xls';
+	$spreadsheet = content_url( 'uploads/2016/11/20-meetup.xls' );
 	$reader      = new Spreadsheet_Excel_Reader( $spreadsheet );
 	$count       = $reader->rowcount();
 
