@@ -1,0 +1,94 @@
+.blog-header h1 {
+	font-weight: 700;
+}
+
+.blog-header p {
+	font-size: 14px;
+}
+
+.entry {
+	margin-top: 40px;
+	padding-top: 50px;
+	border-top: 1px solid $primary-color;
+
+	&:last-child {
+		padding-bottom: 50px;
+	}
+
+	.entry-title {
+		font-size: 22px;
+		font-weight: 400;
+		margin-bottom: 15px;
+	}
+
+	.entry-meta {
+		display: block;
+	}
+
+	.entry-image {
+		margin: 20px 0 30px;
+	}
+
+	.entry-meta,
+	.entry-comments,
+	p {
+		font-size: 13px;
+	}
+}
+
+.single,
+.page {
+	.entry-header {
+		margin-bottom: 25px;
+	}
+
+	.entry-image {
+		margin-top: 20px;
+	}
+}
+
+.players {
+	h1 {
+		margin: 40px 0 30px;
+	}
+	
+	.row {
+		margin-bottom: 30px;
+
+		.post-title {
+			margin-top: 0px;
+		}
+	}
+	hr {
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0));
+	}
+}
+
+.equipe-social {
+	margin: 20px -8px 10px;
+	padding: 0;
+
+	li {
+		display: inline-block;
+		font-size: 20px;
+		margin: 0 8px;
+		width: 30px;
+		height: 30px;
+		text-align: center;
+		line-height: 30px;
+		border-radius: 3px;
+		background-color: $primary-color;
+		color: $white;
+		@include transition(color .3s);
+
+		&:hover {
+			background-color: $base-color;
+		}
+
+		a {
+			color: $white;
+		}
+	}
+}

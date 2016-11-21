@@ -1,0 +1,109 @@
+/*------------------------------
+    PÁGINA CONTATO
+-------------------------------*/
+#responsive-form{
+    max-width: 540px;
+    width: 100%;
+}
+
+.form-row{
+    width: 100%;
+}
+
+.column-half, 
+.column-full{
+    float: left;
+    position: relative;
+    padding: 0.65rem;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*------------------------------
+    MEDIA QUERY
+-------------------------------*/
+@media (max-width: 768px) {
+    .column-half{
+        width: 50%;
+    }   
+}
+
+/*------------------------------
+    CONTACT FORM 7
+-------------------------------*/
+.wpcf7 input[type="text"], 
+.wpcf7 input[type="email"], 
+.wpcf7 textarea {
+    width: 100%;
+    padding: 8px;
+    border: 0;
+    border-radius: 3px;
+    background-color: #edf7fb;
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box
+}
+
+.wpcf7 input[type="text"]::-webkit-input-placeholder,
+.wpcf7 input[type="email"]::-webkit-input-placeholder,
+.wpcf7 textarea::-webkit-input-placeholder {
+   color: $base-color;
+}
+
+.wpcf7 input[type="text"]:-moz-placeholder,
+.wpcf7 input[type="email"]:-moz-placeholder,
+.wpcf7 textarea::-moz-placeholder {
+   color: $base-color;
+}
+
+.wpcf7-submit{
+    float: right;
+    background: #CA0002;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+.wpcf7-submit:hover{
+    background: #ff0000;
+}
+
+span.wpcf7-not-valid-tip{
+    text-shadow: none;
+    font-size: 12px;
+    color: #fff;
+    background: #ff0000;
+    padding: 5px;
+}
+
+div.wpcf7-validation-errors { 
+    text-shadow: none;
+    border: transparent;
+    background: #f9cd00;
+    padding: 5px;
+    color: #9C6533;
+    text-align: center;
+    margin: 0;
+    font-size: 12px;
+}
+
+div.wpcf7-mail-sent-ok{
+    text-align: center;
+    text-shadow: none;
+    padding: 5px;
+    font-size: 12px;
+    background: #59a80f;
+    border-color: #59a80f;
+    color: #fff;
+    margin: 0;
+}

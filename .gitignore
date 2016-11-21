@@ -1,53 +1,93 @@
-# WordPress
-.htaccess
-sitemap.xml
-sitemap.xml.gz
-wp-config.php
+# OS generated files #
+######################
+
+.DS_Store*
+ehthumbs.db
+._*
+*~
+.svn
+.cvs
+*.bak
+*.swp
+Thumbs.db
+.DS_Store
+.idea
+dev/docker
+scripts/vendor
+
+# Vim generated files #
+#######################
+*.un~
+
+# WordPress #
+#############
+
+local-config.php
+tests-config.php
+cache-config.php
+wp-content/uploads/
+wp-content/blogs.dir/
+wp-content/upgrade/
 wp-content/backup-db/
 wp-content/backups/
-wp-content/blogs.dir/
+wp-content/object-cache.php
 wp-content/cache/
-wp-content/upgrade/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/tests/
+wp-content/logs/
+
+wp-content/plugins/fakerpress/
+wp-content/plugins/better-search-replace/
+
 wp-content/uploads/
-wp-content/plugins/advanced-custom-fields/
-wp-content/plugins/advanced-custom-fields-pro/
-wp-content/plugins/wordpress-importer/
-wc-logs/
-wp-snapshots/
+wp-content/blogs.dir/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/backups/
+wp-content/object-cache.php
+wp-content/cache/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/tests/
+wp-content/logs/
 
-# Theme
-wp-content/themes/wp-rio/node_modules/
+# Packages #
+############
 
-# Global
-._*
-.AppleDouble
-.DS_Store
-.localized
-.LSOverride
-.Spotlight-V100
-.Trashes
-Icon
-Desktop.ini
-ehthumbs.db
-Thumbs.db
-*~
-TAGS
-tags
-.*.sw[a-z]
-.netrwhist
-*.un~
-Session.vim
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+
+# Logs and databases #
+######################
+
+logs
 *.log
-*.sublime-project
-*.sublime-workspace
-*.sublime-projectcompletions
-*.tmproj
-*.tmproject
-tmtags
-nbproject/
-.ftppass
-.sftp-config.json
-.idea
+*.sql
 
-# Keys
+# Keys #
+########
+
 keys
+
+# Processors #
+##############
+
+.sass-cache
+.scssc
+codekit-config.json
+local-config.json
+build-process.php
+compass_app_log.txt
+dev/node_modules/
+dev/bower_components/
+dev/vendor/
+dev/composer.phar
