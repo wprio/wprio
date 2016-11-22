@@ -1,3 +1,6 @@
 [submodule "wp"]
 	path = wp
 	url = git@github.com:WordPress/WordPress.git
+[submodule "wp-content/plugins/stream"]
+	path = wp-content/plugins/stream
+	url = git@github.com:xwp/stream.git
