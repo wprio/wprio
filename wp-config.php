@@ -22,7 +22,7 @@ $config_defaults = array(
 
 	// Paths
 	'WP_CONTENT_DIR'          => dirname( __FILE__ ) . '/wp-content',
-	'WP_CONTENT_URL'          => 'https://' . ( ! empty( $_SERVER['HTTP_HOST'] ) ? $_SERVER['HTTP_HOST'] : '' ) . '/wp-content',
+	'WP_CONTENT_URL'          => 'http://' . ( ! empty( $_SERVER['HTTP_HOST'] ) ? $_SERVER['HTTP_HOST'] : '' ) . '/wp-content',
 	'ABSPATH'                 => dirname( __FILE__ ) . '/wp/',
 
 	// Multisite
@@ -117,7 +117,7 @@ foreach ( $config_defaults AS $config_default_key => $config_default_value ) {
 // ==============================================================
 
 if ( empty( $table_prefix ) )
-	$table_prefix = 'wprio_';
+	$table_prefix = 'wp_';
 
 // ==============================================================
 // Manually back up the WP_DEBUG_DISPLAY directive
