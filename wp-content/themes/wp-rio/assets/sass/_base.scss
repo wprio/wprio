@@ -102,14 +102,14 @@ img {
 			@media (min-width: $screen-sm-min) {
 				float: right;
 			}
-			
+
 			@media (min-width: $screen-md-min) {
 				float: left;
 				&:nth-child(n+4) {
 					float: right;
 				}
 			}
-			
+
 			a {
 				display: block;
 				height: inherit;
@@ -131,8 +131,12 @@ img {
 		}
 	}
 }
-	
+
 .admin-bar .main-nav {
+	top: 32px;
+}
+
+.admin-bar .navbar {
 	top: 32px;
 }
 
