@@ -4,21 +4,42 @@
  * Description: Template feito na ridicularidade máxima, por favor na ria ou chore disso. Não cara, para. Sério. Segura as lágrimas pf :(
  */
 
-require_once get_template_directory() . '/inc/certificate/lib/excel_reader2.php';
+ // This is an ugly hack to load the CSV lib without using composer. I'm sorry!
+ // See http://stackoverflow.com/questions/39571391/psr4-auto-load-without-composer
+ function loadPackage($dir)
+ {
+     $composer = json_decode(file_get_contents("$dir/composer.json"), 1);
+     $namespaces = $composer['autoload']['psr-4'];
+
+     // Foreach namespace specified in the composer, load the given classes
+     foreach ($namespaces as $namespace => $classpath) {
+         spl_autoload_register(function ($classname) use ($namespace, $classpath, $dir) {
+             // Check if the namespace matches the class we are looking for
+             if (preg_match("#^".preg_quote($namespace)."#", $classname)) {
+                 // Remove the namespace from the file path since it's psr4
+                 $classname = str_replace($namespace, "", $classname);
+                 $filename = preg_replace("#\\\\#", "/", $classname).".php";
+                 include_once $dir."/".$classpath."/$filename";
+             }
+         });
+     }
+ }
+
+ loadPackage(__DIR__."/inc/certificate/lib/csv");
+ use League\Csv\Reader;
+
 require_once get_template_directory() . '/inc/certificate/lib/mpdf/mpdf.php';
 
 if ( isset( $_GET['email'] ) ) {
-	$email       = sanitize_email( $_GET['email'] );
-	$spreadsheet = WP_CONTENT_DIR . '/uploads/2016/12/21-meetup.xls';
-	$reader      = new Spreadsheet_Excel_Reader( $spreadsheet );
-	$count       = $reader->rowcount();
+	$email = sanitize_email( $_GET['email'] );
+  $source = WP_CONTENT_DIR . '/uploads/2017/01/21-meetup.csv';
+  $csv = Reader::createFromPath($source);
+	$attendees = $csv->setOffset(1)->fetchAll();
 
-	for ( $i = 0; $i < $count + 1; $i++ ) {
-		$current_email = $reader->val( $i, 2 );
-
+	foreach ( $attendees as $attendee ) {
+		$current_email = $attendee[2];
 		if ( $current_email === $email ) {
-			$attendee_name = sanitize_text_field( $reader->val( $i, 1 ) );
-			$attendee_role = sanitize_title( $reader->val( $i, 3 ) );
+			$attendee_name = sanitize_text_field( $attendee[1] );
 			break;
 		}
 	}
